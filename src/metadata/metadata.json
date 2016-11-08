@@ -1,0 +1,2426 @@
+{
+  "package": "FreshbooksAPI",
+  "tagline": "Freshbooks API Wrapper",
+  "description": "The API makes it easy to create web and desktop applications that integrate with your account. Possible uses for it include automatically creating and sending invoices when users sign up on your website, pulling lists of client information, copying data to 3rd party services, and more.",
+  "image": "http://logo.clearbit.com/freshbooks.com",
+  "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-FreshbooksAPI-package",
+  "accounts": {
+    "domain": "freshbooks.com",
+    "credentials": [
+      "clientId",
+      "clientSecret"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "getAccessToken",
+      "description": "This endpoint allows to retrive access token.",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Your clientId obtained from Freshbooks."
+        },
+        {
+          "name": "clientSecret",
+          "type": "credentials",
+          "info": "Required: Your clientSecret obtained from Freshbooks."
+        },
+        {
+          "name": "code",
+          "type": "String",
+          "info": "Required: Authorization code."
+        },
+        {
+          "name": "redirectUri",
+          "type": "String",
+          "info": "Required: Your redirect uri."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "refreshAccessToken",
+      "description": "This endpoint allows to retrive access token from refresh token.",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: Your clientId obtained from Freshbooks."
+        },
+        {
+          "name": "clientSecret",
+          "type": "credentials",
+          "info": "Required: Your clientSecret obtained from Freshbooks."
+        },
+        {
+          "name": "refreshToken",
+          "type": "String",
+          "info": "Required: Refresh token obtained from getAccessToken method."
+        },
+        {
+          "name": "redirectUri",
+          "type": "String",
+          "info": "Required: Your redirect uri."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getIdentityInfo",
+      "description": "The endpoint provides OAuth authentication, preferences, permissions, roles, and business information.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getExpense",
+      "description": "The endpoint allows to retrive information about single expense.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "expenseId",
+          "type": "String",
+          "info": "Required: The ID of the expense."
+        }, {
+          "name": "include",
+          "type": "String",
+          "info": "Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,..."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "createExpense",
+      "description": "The endpoint allows to create new expense.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "amount",
+          "type": "String",
+          "test": "19.99",
+          "info": "Required: The amount of the expense."
+        }, {
+          "name": "date",
+          "type": "String",
+          "test": "2016-11-07",
+          "info": "Required: The date of the expense."
+        }, {
+          "name": "staffId",
+          "type": "String",
+          "test": "1",
+          "info": "Required: id of related staff member if applicable."
+        }, {
+          "name": "categoryId",
+          "type": "String",
+          "test": "3977455",
+          "info": "Required: id of related expense category."
+        }, {
+          "name": "markupPercent",
+          "type": "String",
+          "info": "Optional: string-decimal, note of percent to mark expense up."
+        }, {
+          "name": "projectId",
+          "type": "String",
+          "info": "Optional: id of related project if applicable."
+        }, {
+          "name": "clientId",
+          "type": "String",
+          "info": "Optional: id of related client if applicable."
+        }, {
+          "name": "taxPercent1",
+          "type": "String",
+          "info": "Optional: string-decimal tax amount."
+        }, {
+          "name": "taxName1",
+          "type": "String",
+          "info": "Optional: name of first tax."
+        }, {
+          "name": "taxPercent2",
+          "type": "String",
+          "info": "Optional: string-decimal tax amount for second tax."
+        }, {
+          "name": "taxName2",
+          "type": "String",
+          "info": "Optional: name of second tax."
+        }, {
+          "name": "isDuplicate",
+          "type": "String",
+          "info": "Optional: true/false is duplicated expense."
+        }, {
+          "name": "profileId",
+          "type": "String",
+          "info": "Optional: id of related profile if applicable."
+        }, {
+          "name": "accountName",
+          "type": "String",
+          "info": "Optional: name of related account if applicable."
+        }, {
+          "name": "transactionId",
+          "type": "String",
+          "info": "Optional: id of related transaction if applicable."
+        }, {
+          "name": "invoiceId",
+          "type": "String",
+          "info": "Optional: id of related invoice if applicable."
+        }, {
+          "name": "taxAmount1",
+          "type": "String",
+          "info": "Optional: amount for first tax."
+        }, {
+          "name": "taxCode1",
+          "type": "String",
+          "info": "Optional: 3-letter currency code for first tax."
+        }, {
+          "name": "taxAmount2",
+          "type": "String",
+          "info": "Optional: amount for second tax."
+        }, {
+          "name": "taxCode2",
+          "type": "String",
+          "info": "Optional: 3-letter currency code for second tax."
+        }, {
+          "name": "visState",
+          "type": "String",
+          "info": "Optional: 0 for active, 1 for deleted."
+        }, {
+          "name": "status",
+          "type": "String",
+          "info": "Optional: values from expense status table. 0 - internal (-internal- rather than client); 1 - outstanding (has client, needs to be applied to an invoice); 2 - invoiced (has client, attached to an invoice); 4 - recouped (has client, attached to an invoice, and paid)."
+        }, {
+          "name": "bankName",
+          "type": "String",
+          "info": "Optional: name of bank expense was imported from, if applicable."
+        }, {
+          "name": "vendor",
+          "type": "String",
+          "info": "Optional: name of vendor."
+        }, {
+          "name": "extSystemId",
+          "type": "String",
+          "info": "Optional: id of related contractor system if applicable."
+        }, {
+          "name": "hasReceipt",
+          "type": "String",
+          "info": "Optional: true/false has receipt attached."
+        }, {
+          "name": "notes",
+          "type": "String",
+          "info": "Optional: notes about expense."
+        }, {
+          "name": "extInvoiceId",
+          "type": "String",
+          "info": "Optional: id of related contractor invoice if applicable."
+        }, {
+          "name": "amountCode",
+          "type": "String",
+          "info": "Optional: 3-letter currency code."
+        }, {
+          "name": "compoundedTax",
+          "type": "String",
+          "info": "Optional: true/false tax2 was a compound tax."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getAllExpenses",
+      "description": "The endpoint allows to retrive information about all expenses.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "page",
+          "type": "String",
+          "info": "Optional: The ID of the retun page. Default 0."
+        }, {
+          "name": "perPage",
+          "type": "String",
+          "info": "Optional: Number of results to return. Default 100."
+        }, {
+          "name": "search",
+          "type": "String",
+          "info": "Optional: Filter to search. Pattern: key=value,key=value,..."
+        }, {
+          "name": "include",
+          "type": "String",
+          "info": "Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,..."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "updateSingleExpense",
+      "description": "The endpoint allows to update existing expenses.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "expenseId",
+          "type": "String",
+          "info": "Required: The ID of the expense."
+        }, {
+          "name": "amount",
+          "type": "String",
+          "test": "17.99",
+          "info": "Optional: The amount of the expense."
+        }, {
+          "name": "date",
+          "type": "String",
+          "info": "Optional: The date of the expense."
+        }, {
+          "name": "staffId",
+          "type": "String",
+          "info": "Optional: id of related staff member if applicable."
+        }, {
+          "name": "categoryId",
+          "type": "String",
+          "info": "Optional: id of related expense category."
+        }, {
+          "name": "markupPercent",
+          "type": "String",
+          "info": "Optional: string-decimal, note of percent to mark expense up."
+        }, {
+          "name": "projectId",
+          "type": "String",
+          "info": "Optional: id of related project if applicable."
+        }, {
+          "name": "clientId",
+          "type": "String",
+          "info": "Optional: id of related client if applicable."
+        }, {
+          "name": "taxPercent1",
+          "type": "String",
+          "info": "Optional: string-decimal tax amount."
+        }, {
+          "name": "taxName1",
+          "type": "String",
+          "info": "Optional: name of first tax."
+        }, {
+          "name": "taxPercent2",
+          "type": "String",
+          "info": "Optional: string-decimal tax amount for second tax."
+        }, {
+          "name": "taxName2",
+          "type": "String",
+          "info": "Optional: name of second tax."
+        }, {
+          "name": "isDuplicate",
+          "type": "String",
+          "info": "Optional: true/false is duplicated expense."
+        }, {
+          "name": "profileId",
+          "type": "String",
+          "info": "Optional: id of related profile if applicable."
+        }, {
+          "name": "accountName",
+          "type": "String",
+          "info": "Optional: name of related account if applicable."
+        }, {
+          "name": "transactionId",
+          "type": "String",
+          "info": "Optional: id of related transaction if applicable."
+        }, {
+          "name": "invoiceId",
+          "type": "String",
+          "info": "Optional: id of related invoice if applicable."
+        }, {
+          "name": "taxAmount1",
+          "type": "String",
+          "info": "Optional: amount for first tax."
+        }, {
+          "name": "taxCode1",
+          "type": "String",
+          "info": "Optional: 3-letter currency code for first tax."
+        }, {
+          "name": "taxAmount2",
+          "type": "String",
+          "info": "Optional: amount for second tax."
+        }, {
+          "name": "taxCode2",
+          "type": "String",
+          "info": "Optional: 3-letter currency code for second tax."
+        }, {
+          "name": "visState",
+          "type": "String",
+          "info": "Optional: 0 for active, 1 for deleted."
+        }, {
+          "name": "status",
+          "type": "String",
+          "info": "Optional: values from expense status table. 0 - internal (-internal- rather than client); 1 - outstanding (has client, needs to be applied to an invoice); 2 - invoiced (has client, attached to an invoice); 4 - recouped (has client, attached to an invoice, and paid)."
+        }, {
+          "name": "bankName",
+          "type": "String",
+          "info": "Optional: name of bank expense was imported from, if applicable."
+        }, {
+          "name": "vendor",
+          "type": "String",
+          "info": "Optional: name of vendor."
+        }, {
+          "name": "extSystemId",
+          "type": "String",
+          "info": "Optional: id of related contractor system if applicable."
+        }, {
+          "name": "hasReceipt",
+          "type": "String",
+          "info": "Optional: true/false has receipt attached."
+        }, {
+          "name": "notes",
+          "type": "String",
+          "info": "Optional: notes about expense."
+        }, {
+          "name": "extInvoiceId",
+          "type": "String",
+          "info": "Optional: id of related contractor invoice if applicable."
+        }, {
+          "name": "amountCode",
+          "type": "String",
+          "info": "Optional: 3-letter currency code."
+        }, {
+          "name": "compoundedTax",
+          "type": "String",
+          "info": "Optional: true/false tax2 was a compound tax."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "deleteSingleExpense",
+      "description": "The endpoint allows to delete expense.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "expenseId",
+          "type": "String",
+          "info": "Required: The ID of the expense."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getAllExpenseCategories",
+      "description": "The endpoint allows to retrive all expense categories.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "page",
+          "type": "String",
+          "info": "Optional: The ID of the retun page. Default 0."
+        }, {
+          "name": "perPage",
+          "type": "String",
+          "info": "Optional: Number of results to return. Default 100."
+        }, {
+          "name": "search",
+          "type": "String",
+          "info": "Optional: Filter to search. Pattern: key=value,key=value,..."
+        }, {
+          "name": "include",
+          "type": "String",
+          "info": "Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,..."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getSingleExpenseCategory",
+      "description": "The endpoint allows to retrive information about indecated expense category.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "categoryId",
+          "type": "String",
+          "info": "Required: The ID of the category."
+        }, {
+          "name": "include",
+          "type": "String",
+          "info": "Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,..."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getGateways",
+      "description": "The information returned by these endpoints specifies what payment processors are enabled for your Businesses.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "page",
+          "type": "String",
+          "info": "Optional: The ID of the retun page. Default 0."
+        }, {
+          "name": "perPage",
+          "type": "String",
+          "info": "Optional: Number of results to return. Default 100."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "deleteSingleGateway",
+      "description": "Endpoint allows to delete single gateway.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "gatewayId",
+          "type": "String",
+          "info": "Required: The ID of the gateway."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getInvoices",
+      "description": "This endpoint allows to retrive information about invoices.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "page",
+          "type": "String",
+          "info": "Optional: The ID of the retun page. Default 0."
+        }, {
+          "name": "perPage",
+          "type": "String",
+          "info": "Optional: Number of results to return. Default 100."
+        }, {
+          "name": "search",
+          "type": "String",
+          "info": "Optional: Filter to search. Pattern: key=value,key=value,..."
+        }, {
+          "name": "include",
+          "type": "String",
+          "info": "Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,..."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "createSingleInvoice",
+      "description": "This endpoint allows to create single invoice.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "customerId",
+          "type": "String",
+          "test": "107490",
+          "info": "Required: The ID of the client."
+        }, {
+          "name": "createDate",
+          "type": "String",
+          "test": "2016-12-01",
+          "info": "Required: The date of the invoice."
+        }, {
+          "name": "ownerId",
+          "type": "String",
+          "info": "Optional: id of creator of invoice. 1 if business admin, other if created by e.g. a contractor."
+        }, {
+          "name": "estimateId",
+          "type": "String",
+          "info": "Optional: id of associated estimate, 0 if none."
+        }, {
+          "name": "basecampId",
+          "type": "String",
+          "info": "Optional: id of connected basecamp account, 0 if none."
+        }, {
+          "name": "sentId",
+          "type": "String",
+          "info": "Optional: userid of user who sent the invoice, typically 1 for admin."
+        }, {
+          "name": "status",
+          "type": "String",
+          "info": "Optional: Invoice Status."
+        }, {
+          "name": "parent",
+          "type": "String",
+          "info": "Optional: id of object this invoice was generated from, 0 if none."
+        }, {
+          "name": "displayStatus",
+          "type": "String",
+          "info": "Optional: Description of status shown in FreshBooks UI, one of 'draft', 'created', 'sent', 'viewed', or 'outstanding'."
+        }, {
+          "name": "autobillStatus",
+          "type": "String",
+          "info": "Optional: one of retry, failed, or success."
+        }, {
+          "name": "paymentStatus",
+          "type": "String",
+          "info": "Optional: description of payment status. One of 'unpaid', 'partial', 'paid', and 'auto-paid'. See the v3_status table on this page for descriptions of each."
+        }, {
+          "name": "lastOrderStatus",
+          "type": "String",
+          "info": "Optional: describes status of last attempted payment."
+        }, {
+          "name": "disputeStatus",
+          "type": "String",
+          "info": "Optional: description of whether invoice has been disputed."
+        }, {
+          "name": "depositStatus",
+          "type": "String",
+          "info": "Optional: description of deposits applied to invoice. One of 'paid', 'unpaid', 'partial', 'none', and 'converted'."
+        }, {
+          "name": "autoBill",
+          "type": "String",
+          "info": "Optional: whether this invoice has a credit card saved."
+        }, {
+          "name": "v3Status",
+          "type": "String",
+          "info": "Optional: description of Invoice Status, see V3 Status Table."
+        }, {
+          "name": "invoiceNumber",
+          "type": "String",
+          "info": "Optional: user-specified and visible invoice id."
+        }, {
+          "name": "generationDate",
+          "type": "String",
+          "info": "Optional: date invoice generated from object, null if it wasn't, YYYY-MM-DD if it was."
+        }, {
+          "name": "discountValue",
+          "type": "String",
+          "info": "Optional: decimal-string amount."
+        }, {
+          "name": "discountDescription",
+          "type": "String",
+          "info": "Optional: public note about discount."
+        }, {
+          "name": "poNumber",
+          "type": "String",
+          "info": "Optional: Post Office box number for address on invoice."
+        }, {
+          "name": "currencyCode",
+          "type": "String",
+          "info": "Optional: three-letter currency code for invoice."
+        }, {
+          "name": "language",
+          "type": "String",
+          "info": "Optional: two-letter language code, e.g. \"en\"."
+        }, {
+          "name": "terms",
+          "type": "String",
+          "info": "Optional: terms listed on invoice."
+        }, {
+          "name": "notes",
+          "type": "String",
+          "info": "Optional: Notes listed on invoice."
+        }, {
+          "name": "address",
+          "type": "String",
+          "info": "Optional: First line of address on invoice."
+        }, {
+          "name": "depositAmount",
+          "type": "String",
+          "info": "Optional: amount required as deposit, null if none."
+        }, {
+          "name": "depositPercentage",
+          "type": "String",
+          "info": "Optional: percent of the invoice's value required as a deposit."
+        }, {
+          "name": "gmail",
+          "type": "String",
+          "info": "Optional: whether to send via ground mail."
+        }, {
+          "name": "showAttachments",
+          "type": "String",
+          "info": "Optional: whether attachments on invoice are rendered."
+        }, {
+          "name": "visState",
+          "type": "String",
+          "info": "Optional: 0 for active, 1 for deleted."
+        }, {
+          "name": "street",
+          "type": "String",
+          "info": "Optional: street for address on invoice."
+        }, {
+          "name": "street2",
+          "type": "String",
+          "info": "Optional: second line of street for address on invoice."
+        }, {
+          "name": "city",
+          "type": "String",
+          "info": "Optional: city for address on invoice."
+        }, {
+          "name": "province",
+          "type": "String",
+          "info": "Optional: Province for address on invoice."
+        }, {
+          "name": "code",
+          "type": "String",
+          "info": "Optional: zip code for address on invoice."
+        }, {
+          "name": "country",
+          "type": "String",
+          "info": "Optional: Country for address on invoice."
+        }, {
+          "name": "organization",
+          "type": "String",
+          "info": "Optional: Name of organization being invoiced."
+        }, {
+          "name": "fname",
+          "type": "String",
+          "info": "Optional: First name of Client on invoice."
+        }, {
+          "name": "lname",
+          "type": "String",
+          "info": "Optional: Last name of client being invoiced."
+        }, {
+          "name": "vatName",
+          "type": "String",
+          "info": "Optional: Value Added Tax name if provided."
+        }, {
+          "name": "vatNumber",
+          "type": "String",
+          "info": "Optional: Value Added Tax number if provided."
+        }, {
+          "name": "dueOffsetDays",
+          "type": "String",
+          "info": "Optional: Number of days from creation that invoice is due."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getSingleInvoice",
+      "description": "This endpoint allows to retrive information about single invoice.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "invoiceId",
+          "type": "String",
+          "info": "Required: The ID of the invoice."
+        }, {
+          "name": "include",
+          "type": "String",
+          "info": "Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,..."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "updateSingleInvoice",
+      "description": "This endpoint allows to update single invoice.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "invoiceId",
+          "type": "String",
+          "info": "Required: The ID of the invoice."
+        }, {
+          "name": "customerId",
+          "type": "String",
+          "test": "107490",
+          "info": "Required: The ID of the client."
+        }, {
+          "name": "createDate",
+          "type": "String",
+          "info": "Optional: The date of the invoice."
+        }, {
+          "name": "ownerId",
+          "type": "String",
+          "info": "Optional: id of creator of invoice. 1 if business admin, other if created by e.g. a contractor."
+        }, {
+          "name": "estimateId",
+          "type": "String",
+          "info": "Optional: id of associated estimate, 0 if none."
+        }, {
+          "name": "basecampId",
+          "type": "String",
+          "info": "Optional: id of connected basecamp account, 0 if none."
+        }, {
+          "name": "sentId",
+          "type": "String",
+          "info": "Optional: userid of user who sent the invoice, typically 1 for admin."
+        }, {
+          "name": "status",
+          "type": "String",
+          "info": "Optional: Invoice Status."
+        }, {
+          "name": "parent",
+          "type": "String",
+          "info": "Optional: id of object this invoice was generated from, 0 if none."
+        }, {
+          "name": "displayStatus",
+          "type": "String",
+          "info": "Optional: Description of status shown in FreshBooks UI, one of 'draft', 'created', 'sent', 'viewed', or 'outstanding'."
+        }, {
+          "name": "autobillStatus",
+          "type": "String",
+          "info": "Optional: one of retry, failed, or success."
+        }, {
+          "name": "paymentStatus",
+          "type": "String",
+          "info": "Optional: description of payment status. One of 'unpaid', 'partial', 'paid', and 'auto-paid'. See the v3_status table on this page for descriptions of each."
+        }, {
+          "name": "lastOrderStatus",
+          "type": "String",
+          "info": "Optional: describes status of last attempted payment."
+        }, {
+          "name": "disputeStatus",
+          "type": "String",
+          "info": "Optional: description of whether invoice has been disputed."
+        }, {
+          "name": "depositStatus",
+          "type": "String",
+          "info": "Optional: description of deposits applied to invoice. One of 'paid', 'unpaid', 'partial', 'none', and 'converted'."
+        }, {
+          "name": "autoBill",
+          "type": "String",
+          "info": "Optional: whether this invoice has a credit card saved."
+        }, {
+          "name": "v3Status",
+          "type": "String",
+          "info": "Optional: description of Invoice Status, see V3 Status Table."
+        }, {
+          "name": "invoiceNumber",
+          "type": "String",
+          "info": "Optional: user-specified and visible invoice id."
+        }, {
+          "name": "generationDate",
+          "type": "String",
+          "info": "Optional: date invoice generated from object, null if it wasn't, YYYY-MM-DD if it was."
+        }, {
+          "name": "discountValue",
+          "type": "String",
+          "info": "Optional: decimal-string amount."
+        }, {
+          "name": "discountDescription",
+          "type": "String",
+          "info": "Optional: public note about discount."
+        }, {
+          "name": "poNumber",
+          "type": "String",
+          "info": "Optional: Post Office box number for address on invoice."
+        }, {
+          "name": "currencyCode",
+          "type": "String",
+          "test": "USD",
+          "info": "Optional: three-letter currency code for invoice."
+        }, {
+          "name": "language",
+          "type": "String",
+          "info": "Optional: two-letter language code, e.g. \"en\"."
+        }, {
+          "name": "terms",
+          "type": "String",
+          "info": "Optional: terms listed on invoice."
+        }, {
+          "name": "notes",
+          "type": "String",
+          "info": "Optional: Notes listed on invoice."
+        }, {
+          "name": "address",
+          "type": "String",
+          "info": "Optional: First line of address on invoice."
+        }, {
+          "name": "depositAmount",
+          "type": "String",
+          "info": "Optional: amount required as deposit, null if none."
+        }, {
+          "name": "depositPercentage",
+          "type": "String",
+          "info": "Optional: percent of the invoice's value required as a deposit."
+        }, {
+          "name": "gmail",
+          "type": "String",
+          "info": "Optional: whether to send via ground mail."
+        }, {
+          "name": "showAttachments",
+          "type": "String",
+          "info": "Optional: whether attachments on invoice are rendered."
+        }, {
+          "name": "visState",
+          "type": "String",
+          "info": "Optional: 0 for active, 1 for deleted."
+        }, {
+          "name": "street",
+          "type": "String",
+          "info": "Optional: street for address on invoice."
+        }, {
+          "name": "street2",
+          "type": "String",
+          "info": "Optional: second line of street for address on invoice."
+        }, {
+          "name": "city",
+          "type": "String",
+          "info": "Optional: city for address on invoice."
+        }, {
+          "name": "province",
+          "type": "String",
+          "info": "Optional: Province for address on invoice."
+        }, {
+          "name": "code",
+          "type": "String",
+          "info": "Optional: zip code for address on invoice."
+        }, {
+          "name": "country",
+          "type": "String",
+          "info": "Optional: Country for address on invoice."
+        }, {
+          "name": "organization",
+          "type": "String",
+          "info": "Optional: Name of organization being invoiced."
+        }, {
+          "name": "fname",
+          "type": "String",
+          "info": "Optional: First name of Client on invoice."
+        }, {
+          "name": "lname",
+          "type": "String",
+          "info": "Optional: Last name of client being invoiced."
+        }, {
+          "name": "vatName",
+          "type": "String",
+          "info": "Optional: Value Added Tax name if provided."
+        }, {
+          "name": "vatNumber",
+          "type": "String",
+          "info": "Optional: Value Added Tax number if provided."
+        }, {
+          "name": "dueOffsetDays",
+          "type": "String",
+          "info": "Optional: Number of days from creation that invoice is due."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "deleteSingleInvoice",
+      "description": "This endpoint allows to delete single invoice.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "invoiceId",
+          "type": "String",
+          "info": "Required: The ID of the invoice."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getItems",
+      "description": "This endpoint allows to retrive information about items.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "page",
+          "type": "String",
+          "info": "Optional: The ID of the retun page. Default 0."
+        }, {
+          "name": "perPage",
+          "type": "String",
+          "info": "Optional: Number of results to return. Default 100."
+        }, {
+          "name": "search",
+          "type": "String",
+          "info": "Optional: Filter to search. Pattern: key=value,key=value,..."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "createSingleItem",
+      "description": "This endpoint allows to create new item.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "name",
+          "type": "String",
+          "test": "Test item new__",
+          "info": "Required: The name of the item."
+        }, {
+          "name": "quantity",
+          "type": "String",
+          "test": "1",
+          "info": "Optional: decimal-string number to multiply unit cost by."
+        }, {
+          "name": "inventory",
+          "type": "String",
+          "test": "1",
+          "info": "Optional: decimal-string count of inventory."
+        }, {
+          "name": "amount",
+          "type": "String",
+          "test": "1000",
+          "info": "Optional: amount paid on invoice, to two decimal places."
+        }, {
+          "name": "code",
+          "type": "String",
+          "test": "UAH",
+          "info": "Optional: three-letter currency code."
+        }, {
+          "name": "tax1",
+          "type": "String",
+          "info": "Optional: id of tax on invoice."
+        }, {
+          "name": "tax2",
+          "type": "String",
+          "info": "Optional: id of second tax on invoice if applicable."
+        }, {
+          "name": "visState",
+          "type": "String",
+          "info": "Optional: 0 for active, 1 for deleted."
+        }, {
+          "name": "description",
+          "type": "String",
+          "test": "some description about item",
+          "info": "Optional: descriptive text for item."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getSingleItem",
+      "description": "This endpoint allows to retrive information about single item.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "itemId",
+          "type": "String",
+          "info": "Required: The ID of the item."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "updateSingleItem",
+      "description": "This endpoint allows to update item.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "itemId",
+          "type": "String",
+          "info": "Required: The ID of the item."
+        }, {
+          "name": "name",
+          "type": "String",
+          "test": "Test item new upd111",
+          "info": "Required: The name of the item."
+        }, {
+          "name": "quantity",
+          "type": "String",
+          "test": "5",
+          "info": "Optional: decimal-string number to multiply unit cost by."
+        }, {
+          "name": "inventory",
+          "type": "String",
+          "info": "Optional: decimal-string count of inventory."
+        }, {
+          "name": "amount",
+          "type": "String",
+          "info": "Optional: amount paid on invoice, to two decimal places."
+        }, {
+          "name": "code",
+          "type": "String",
+          "info": "Optional: three-letter currency code."
+        }, {
+          "name": "tax1",
+          "type": "String",
+          "info": "Optional: id of tax on invoice."
+        }, {
+          "name": "tax2",
+          "type": "String",
+          "info": "Optional: id of second tax on invoice if applicable."
+        }, {
+          "name": "visState",
+          "type": "String",
+          "info": "Optional: 0 for active, 1 for deleted."
+        }, {
+          "name": "description",
+          "type": "String",
+          "info": "Optional: descriptive text for item."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "deleteSingleItem",
+      "description": "This endpoint allows to update item.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "itemId",
+          "type": "String",
+          "info": "Required: The ID of the item."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getPayments",
+      "description": "This endpoint allows to retrive information about payments.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "page",
+          "type": "String",
+          "info": "Optional: The ID of the retun page. Default 0."
+        }, {
+          "name": "perPage",
+          "type": "String",
+          "info": "Optional: Number of results to return. Default 100."
+        }, {
+          "name": "search",
+          "type": "String",
+          "info": "Optional: Filter to search. Pattern: key=value,key=value,..."
+        }, {
+          "name": "include",
+          "type": "String",
+          "info": "Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,..."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "createSinglePayment",
+      "description": "This endpoint allows to create new payment.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "invoiceId",
+          "type": "String",
+          "test": "102830",
+          "info": "Required: id of related invoice."
+        }, {
+          "name": "amount",
+          "type": "String",
+          "test": "100.00",
+          "info": "Required: amount paid on invoice, to two decimal places."
+        }, {
+          "name": "date",
+          "type": "String",
+          "test": "2016-11-08",
+          "info": "Required: date the payment was made, YYYY-MM-DD format."
+        }, {
+          "name": "type",
+          "type": "String",
+          "test": "Cash",
+          "info": "Required: \"Check\", \"Credit\", \"Cash\", etc."
+        }, {
+          "name": "creditId",
+          "type": "String",
+          "info": "Optional: id of related credit."
+        }, {
+          "name": "code",
+          "type": "String",
+          "info": "Optional: three-letter currency code."
+        }, {
+          "name": "clientId",
+          "type": "String",
+          "info": "Optional: id of client who made the payment."
+        }, {
+          "name": "visState",
+          "type": "String",
+          "info": "Optional: 0 for active, 1 for deleted."
+        }, {
+          "name": "note",
+          "type": "String",
+          "info": "Optional: notes on payment, often used for credit card reference number."
+        }, {
+          "name": "overpaymentId",
+          "type": "String",
+          "info": "Optional: id of related overpayment if relevant."
+        }, {
+          "name": "gateway",
+          "type": "String",
+          "info": "Optional: the payment processor used, if any."
+        }, {
+          "name": "fromCredit",
+          "type": "String",
+          "info": "Optional: whether or not the payment was converted from a Credit on a Client's account."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getSinglePayment",
+      "description": "This endpoint allows to retrive information about single payment.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "paymentId",
+          "type": "String",
+          "info": "Required: The ID of the payment."
+        }, {
+          "name": "include",
+          "type": "String",
+          "info": "Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,..."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "updateSinglePayment",
+      "description": "This endpoint allows to update payment.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "invoiceId",
+          "type": "String",
+          "test": "102830",
+          "info": "Required: id of related invoice."
+        }, {
+          "name": "paymentId",
+          "type": "String",
+          "info": "Required: The ID of the payment."
+        }, {
+          "name": "amount",
+          "type": "String",
+          "test": "150",
+          "info": "Optional: amount paid on invoice, to two decimal places."
+        }, {
+          "name": "date",
+          "type": "String",
+          "info": "Optional: date the payment was made, YYYY-MM-DD format."
+        }, {
+          "name": "type",
+          "type": "String",
+          "info": "Optional: \"Check\", \"Credit\", \"Cash\", etc."
+        }, {
+          "name": "creditId",
+          "type": "String",
+          "info": "Optional: id of related credit."
+        }, {
+          "name": "code",
+          "type": "String",
+          "info": "Optional: three-letter currency code."
+        }, {
+          "name": "clientId",
+          "type": "String",
+          "info": "Optional: id of client who made the payment."
+        }, {
+          "name": "visState",
+          "type": "String",
+          "info": "Optional: 0 for active, 1 for deleted."
+        }, {
+          "name": "note",
+          "type": "String",
+          "info": "Optional: notes on payment, often used for credit card reference number."
+        }, {
+          "name": "overpaymentId",
+          "type": "String",
+          "info": "Optional: id of related overpayment if relevant."
+        }, {
+          "name": "gateway",
+          "type": "String",
+          "info": "Optional: the payment processor used, if any."
+        }, {
+          "name": "fromCredit",
+          "type": "String",
+          "info": "Optional: whether or not the payment was converted from a Credit on a Client's account."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "deleteSinglePayment",
+      "description": "This endpoint allows to delete payment.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "paymentId",
+          "type": "String",
+          "info": "Required: The ID of the payment."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getSystemInfo",
+      "description": "An Accounting System represents an entity that can send invoices. It is the central point of association between all of a single Administrator of a single Business’ Invoices, Clients, Staff, Expenses, and Reports.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "systemId",
+          "type": "String",
+          "test": "1",
+          "info": "Optional: The ID of the system. The value is only meaningful if a user has access to multiple systems."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getTaxes",
+      "description": "This endpoint allows to retrive information about taxes.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "page",
+          "type": "String",
+          "info": "Optional: The ID of the retun page. Default 0."
+        }, {
+          "name": "perPage",
+          "type": "String",
+          "info": "Optional: Number of results to return. Default 100."
+        }, {
+          "name": "search",
+          "type": "String",
+          "info": "Optional: Filter to search. Pattern: key=value,key=value,..."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "createSingleTax",
+      "description": "This endpoint allows to create new tax.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "name",
+          "type": "String",
+          "test": "new_tax_",
+          "info": "Required: The name of the new tax."
+        }, {
+          "name": "number",
+          "type": "String",
+          "info": "Optional: an external number that identifies your tax submission."
+        }, {
+          "name": "amount",
+          "type": "String",
+          "test": "2",
+          "info": "Optional: string-decimal representing percentage value of tax."
+        }, {
+          "name": "compound",
+          "type": "String",
+          "info": "Optional: compound taxes are calculated on top of primary taxes. True || false"
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getSingleTax",
+      "description": "This endpoint allows to create new tax.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "taxId",
+          "type": "String",
+          "info": "Required: The ID of the tax."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "updateSingleTax",
+      "description": "This endpoint allows to update existing tax.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "taxId",
+          "type": "String",
+          "info": "Required: The ID of the tax."
+        }, {
+          "name": "name",
+          "type": "String",
+          "info": "Optional: The name of the new tax."
+        }, {
+          "name": "number",
+          "type": "String",
+          "info": "Optional: an external number that identifies your tax submission."
+        }, {
+          "name": "amount",
+          "type": "String",
+          "test": "4",
+          "info": "Optional: string-decimal representing percentage value of tax."
+        }, {
+          "name": "compound",
+          "type": "String",
+          "info": "Optional: compound taxes are calculated on top of primary taxes. True || false"
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "deleteSingleTax",
+      "description": "This endpoint allows to delete existing tax.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "taxId",
+          "type": "String",
+          "info": "Required: The ID of the tax."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getClients",
+      "description": "This endpoint allows to retrive information about clients.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "page",
+          "type": "String",
+          "info": "Optional: The ID of the retun page. Default 0."
+        }, {
+          "name": "perPage",
+          "type": "String",
+          "info": "Optional: Number of results to return. Default 100."
+        }, {
+          "name": "search",
+          "type": "String",
+          "info": "Optional: Filter to search. Pattern: key=value,key=value,..."
+        }, {
+          "name": "include",
+          "type": "String",
+          "info": "Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,..."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "createSingleClient",
+      "description": "This endpoint allows to create new client.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "busPhone",
+          "type": "String",
+          "info": "Optional: business phone number."
+        }, {
+          "name": "companyIndustry",
+          "type": "String",
+          "info": "Optional: description of industry client is in."
+        }, {
+          "name": "companySize",
+          "type": "String",
+          "info": "Optional: size of client's company."
+        }, {
+          "name": "currencyCode",
+          "type": "String",
+          "info": "Optional: 3-letter shortcode for preferred currency."
+        }, {
+          "name": "email",
+          "type": "String",
+          "info": "Optional: client email."
+        }, {
+          "name": "fax",
+          "type": "String",
+          "info": "Optional: client fax."
+        }, {
+          "name": "fname",
+          "type": "String",
+          "test": "Test",
+          "info": "Optional: first name."
+        }, {
+          "name": "lname",
+          "type": "String",
+          "test": "Testov",
+          "info": "Optional: last name."
+        }, {
+          "name": "homePhone",
+          "type": "String",
+          "info": "Optional: home phone number."
+        }, {
+          "name": "language",
+          "type": "String",
+          "info": "Optional: shortcode indicating user language e.g. \"en\"."
+        }, {
+          "name": "mobPhone",
+          "type": "String",
+          "test": "+380901234567",
+          "info": "Optional: mobile phone number."
+        }, {
+          "name": "note",
+          "type": "String",
+          "info": "Optional: notes kept by admin about client."
+        }, {
+          "name": "organization",
+          "type": "String",
+          "test": "TestORG",
+          "info": "Optional: name for client's business."
+        }, {
+          "name": "billingCity",
+          "type": "String",
+          "info": "Optional: billing city."
+        }, {
+          "name": "billingCode",
+          "type": "String",
+          "info": "Optional: billing postal code."
+        }, {
+          "name": "billingCountry",
+          "type": "String",
+          "info": "Optional: billing country."
+        }, {
+          "name": "billingProvince",
+          "type": "String",
+          "info": "Optional: billing province."
+        }, {
+          "name": "billingStreet",
+          "type": "String",
+          "info": "Optional: billing street address."
+        }, {
+          "name": "billingStreet2",
+          "type": "String",
+          "info": "Optional: billing street address second part."
+        }, {
+          "name": "prefEmail",
+          "type": "String",
+          "info": "Optional: prefers email over ground mail. true || false"
+        }, {
+          "name": "prefGmail",
+          "type": "String",
+          "info": "Optional: prefers ground mail over email. true || false"
+        }, {
+          "name": "shippingCity",
+          "type": "String",
+          "info": "Optional: shipping address city."
+        }, {
+          "name": "shippingCode",
+          "type": "String",
+          "info": "Optional: shipping postal code."
+        }, {
+          "name": "shippingCountry",
+          "type": "String",
+          "info": "Optional: shipping country."
+        }, {
+          "name": "shippingProvince",
+          "type": "String",
+          "info": "Optional: shipping short form for province."
+        }, {
+          "name": "shippingStreet",
+          "type": "String",
+          "info": "Optional: shipping street address."
+        }, {
+          "name": "shippingStreet2",
+          "type": "String",
+          "info": "Optional: shipping address second street info."
+        }, {
+          "name": "vatName",
+          "type": "String",
+          "info": "Optional: Value Added Tax name."
+        }, {
+          "name": "vatNumber",
+          "type": "String",
+          "info": "Optional: Value Added Tax number."
+        }, {
+          "name": "visState",
+          "type": "String",
+          "info": "Optional: \"visibility state\", active, deleted, or archived."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getSingleClient",
+      "description": "This endpoint allows to retrive information about single client.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "clientId",
+          "type": "String",
+          "info": "Required: The ID of the client."
+        }, {
+          "name": "include",
+          "type": "String",
+          "info": "Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,..."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "updateSingleClient",
+      "description": "This endpoint allows to update client.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "clientId",
+          "type": "String",
+          "info": "Required: The ID of the client."
+        }, {
+          "name": "busPhone",
+          "type": "String",
+          "info": "Optional: business phone number."
+        }, {
+          "name": "companyIndustry",
+          "type": "String",
+          "info": "Optional: description of industry client is in."
+        }, {
+          "name": "companySize",
+          "type": "String",
+          "info": "Optional: size of client's company."
+        }, {
+          "name": "currencyCode",
+          "type": "String",
+          "info": "Optional: 3-letter shortcode for preferred currency."
+        }, {
+          "name": "email",
+          "type": "String",
+          "info": "Optional: client email."
+        }, {
+          "name": "fax",
+          "type": "String",
+          "info": "Optional: client fax."
+        }, {
+          "name": "fname",
+          "type": "String",
+          "info": "Optional: first name."
+        }, {
+          "name": "lname",
+          "type": "String",
+          "info": "Optional: last name."
+        }, {
+          "name": "homePhone",
+          "type": "String",
+          "info": "Optional: home phone number."
+        }, {
+          "name": "language",
+          "type": "String",
+          "info": "Optional: shortcode indicating user language e.g. \"en\"."
+        }, {
+          "name": "mobPhone",
+          "type": "String",
+          "test": "+380935656677",
+          "info": "Optional: mobile phone number."
+        }, {
+          "name": "note",
+          "type": "String",
+          "info": "Optional: notes kept by admin about client."
+        }, {
+          "name": "organization",
+          "type": "String",
+          "info": "Optional: name for client's business."
+        }, {
+          "name": "billingCity",
+          "type": "String",
+          "info": "Optional: billing city."
+        }, {
+          "name": "billingCode",
+          "type": "String",
+          "info": "Optional: billing postal code."
+        }, {
+          "name": "billingCountry",
+          "type": "String",
+          "info": "Optional: billing country."
+        }, {
+          "name": "billingProvince",
+          "type": "String",
+          "info": "Optional: billing province."
+        }, {
+          "name": "billingStreet",
+          "type": "String",
+          "info": "Optional: billing street address."
+        }, {
+          "name": "billingStreet2",
+          "type": "String",
+          "info": "Optional: billing street address second part."
+        }, {
+          "name": "prefEmail",
+          "type": "String",
+          "info": "Optional: prefers email over ground mail. true || false"
+        }, {
+          "name": "prefGmail",
+          "type": "String",
+          "info": "Optional: prefers ground mail over email. true || false"
+        }, {
+          "name": "shippingCity",
+          "type": "String",
+          "info": "Optional: shipping address city."
+        }, {
+          "name": "shippingCode",
+          "type": "String",
+          "info": "Optional: shipping postal code."
+        }, {
+          "name": "shippingCountry",
+          "type": "String",
+          "info": "Optional: shipping country."
+        }, {
+          "name": "shippingProvince",
+          "type": "String",
+          "info": "Optional: shipping short form for province."
+        }, {
+          "name": "shippingStreet",
+          "type": "String",
+          "info": "Optional: shipping street address."
+        }, {
+          "name": "shippingStreet2",
+          "type": "String",
+          "info": "Optional: shipping address second street info."
+        }, {
+          "name": "vatName",
+          "type": "String",
+          "info": "Optional: Value Added Tax name."
+        }, {
+          "name": "vatNumber",
+          "type": "String",
+          "info": "Optional: Value Added Tax number."
+        }, {
+          "name": "visState",
+          "type": "String",
+          "info": "Optional: \"visibility state\", active, deleted, or archived."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "deleteSingleClient",
+      "description": "This endpoint allows to delete client.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "clientId",
+          "type": "String",
+          "info": "Required: The ID of the client."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getStaffs",
+      "description": "This endpoint allows to retrive information about staffs.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "search",
+          "type": "String",
+          "info": "Optional: Filter to search. Pattern: key=value,key=value,..."
+        }, {
+          "name": "include",
+          "type": "String",
+          "info": "Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,..."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "getSingleStaff",
+      "description": "This endpoint allows to retrive information about single staff.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "staffId",
+          "type": "String",
+          "test": "1",
+          "info": "Required: The ID of the staff."
+        }, {
+          "name": "include",
+          "type": "String",
+          "info": "Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,..."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "updateSingleStaff",
+      "description": "This endpoint allows to update single staff.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "staffId",
+          "type": "String",
+          "test": "1",
+          "info": "Required: The ID of the staff."
+        }, {
+          "name": "fax",
+          "type": "String",
+          "info": "Optional: fax number."
+        }, {
+          "name": "rate",
+          "type": "String",
+          "info": "Optional: rate this staff is billed at."
+        }, {
+          "name": "note",
+          "type": "String",
+          "info": "Optional: notes about staff."
+        }, {
+          "name": "displayName",
+          "type": "String",
+          "info": "Optional: name chosen by staff member to display."
+        }, {
+          "name": "lname",
+          "type": "String",
+          "info": "Optional: last name."
+        }, {
+          "name": "mobPhone",
+          "type": "String",
+          "test": "+380951234567",
+          "info": "Optional: mobile phone number."
+        }, {
+          "name": "homePhone",
+          "type": "String",
+          "info": "Optional: home phone number."
+        }, {
+          "name": "email",
+          "type": "String",
+          "info": "Optional: email address for staff."
+        }, {
+          "name": "username",
+          "type": "String",
+          "info": "Optional: username for staff; randomly assigned if none specified at creation time."
+        }, {
+          "name": "billingProvince",
+          "type": "String",
+          "info": "Optional: billing address province."
+        }, {
+          "name": "billingCity",
+          "type": "String",
+          "info": "Optional: billing address city."
+        }, {
+          "name": "billingCode",
+          "type": "String",
+          "info": "Optional: billing address zip code."
+        }, {
+          "name": "billingCountry",
+          "type": "String",
+          "info": "Optional: billing address country."
+        }, {
+          "name": "busPhone",
+          "type": "String",
+          "info": "Optional: business phone number."
+        }, {
+          "name": "language",
+          "type": "String",
+          "info": "Optional: staff's selected language."
+        }, {
+          "name": "billingStreet2",
+          "type": "String",
+          "info": "Optional: billing address secondary street info."
+        }, {
+          "name": "visState",
+          "type": "String",
+          "info": "Optional: \"visibility state\", active, deleted, or archived."
+        }, {
+          "name": "fname",
+          "type": "String",
+          "info": "Optional: first name."
+        }, {
+          "name": "organization",
+          "type": "String",
+          "info": "Optional: organization staff member is affiliated with."
+        }, {
+          "name": "billingStreet",
+          "type": "String",
+          "info": "Optional: billing address primary street info."
+        }, {
+          "name": "currencyCode",
+          "type": "String",
+          "info": "Optional: 3-letter shortcode for preferred currency."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }, {
+      "name": "deleteSingleStaff",
+      "description": "This endpoint allows to delete staff.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        }, {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        }, {
+          "name": "staffId",
+          "type": "String",
+          "info": "Required: The ID of the staff."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success => channels: Array <string>"
+        }
+      ]
+    }
+  ]
+}
