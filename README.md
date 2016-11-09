@@ -601,7 +601,7 @@ This endpoint allows to create new item.
 
 {
 	"accessToken": "xxxxxxxxx",
-        "accountId": "V6zRd"
+        "accountId": "V6zRd",
 	"name": "Test item",
 	"quantity": "1",
 	"inventory": "1",
@@ -678,6 +678,7 @@ This endpoint allows to update item.
         "accountId": "V6zRd",
 	"itemId": "123"
 }
+```
 
 <a name="getPayments"/>
 ## FreshbooksAPI.getPayments
@@ -754,6 +755,7 @@ This endpoint allows to retrieve information about single payment.
         "accountId": "V6zRd",
 	"paymentId": "10283055"
 }
+```
 
 <a name="updateSinglePayment"/>
 ## FreshbooksAPI.updateSinglePayment
@@ -806,6 +808,7 @@ This endpoint allows to delete payment.
         "accountId": "V6zRd",
 	"paymentId": "10283055"
 }
+```
 
 <a name="getSystemInfo"/>
 ## FreshbooksAPI.getSystemInfo
@@ -888,6 +891,7 @@ This endpoint allows to create new tax.
         "accountId": "V6zRd",
 	"taxId": "1111"
 }
+```
 
 <a name="updateSingleTax"/>
 ## FreshbooksAPI.updateSingleTax
