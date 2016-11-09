@@ -4,10 +4,12 @@ The API makes it easy to create web and desktop applications that integrate with
 * Credentials: clientId, clientSecret
 
 ## How to get credentials: 
-0. Item one 
-1. Item two
+0. Log in or create new account 
+1. Go to [Developer section](https://my.freshbooks.com/#/developer)
+2. Create an App
+3. After creating app you will see Client ID and Client
 
-## TOC: 
+## TOC:
 * [getAccessToken](#getAccessToken)
 * [refreshAccessToken](#refreshAccessToken)
 * [getIdentityInfo](#getIdentityInfo)
@@ -53,7 +55,7 @@ The API makes it easy to create web and desktop applications that integrate with
  
 <a name="getAccessToken"/>
 ## FreshbooksAPI.getAccessToken
-This endpoint allows to retrive access token.
+This endpoint allows to retrieve access token.
 
 | Field       | Type       | Description
 |-------------|------------|----------
@@ -62,9 +64,20 @@ This endpoint allows to retrive access token.
 | code        | String     | Required: Authorization code.
 | redirectUri | String     | Required: Your redirect uri.
 
+#### Request example
+```json
+
+{
+	"clientId": "xxxxxxxxx",
+	"clientSecret": "xxxxxxxxxxxxx",
+	"code": "xxxxxxxxxxxxxxxxx",
+	"redirectUri": "https://your_redirect_url"
+}
+```
+
 <a name="refreshAccessToken"/>
 ## FreshbooksAPI.refreshAccessToken
-This endpoint allows to retrive access token from refresh token.
+This endpoint allows to retrieve access token from refresh token.
 
 | Field       | Type       | Description
 |-------------|------------|----------
@@ -72,6 +85,17 @@ This endpoint allows to retrive access token from refresh token.
 | clientSecret| credentials| Required: Your clientSecret obtained from Freshbooks.
 | refreshToken| String     | Required: Refresh token obtained from getAccessToken method.
 | redirectUri | String     | Required: Your redirect uri.
+
+#### Request example
+```json
+
+{
+	"clientId": "xxxxxxxxx",
+	"clientSecret": "xxxxxxxxxxxxx",
+	"refreshToken": "xxxxxxxxxxxxxxxxx",
+	"redirectUri": "https://your_redirect_url"
+}
+```
 
 <a name="getIdentityInfo"/>
 ## FreshbooksAPI.getIdentityInfo
@@ -81,9 +105,17 @@ The endpoint provides OAuth authentication, preferences, permissions, roles, and
 |------------|-------|----------
 | accessToken| String| Required: Access token obtained from getAccessToken method.
 
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx"
+}
+```
+
 <a name="getExpense"/>
 ## FreshbooksAPI.getExpense
-The endpoint allows to retrive information about single expense.
+The endpoint allows to retrieve information about single expense.
 
 | Field      | Type  | Description
 |------------|-------|----------
@@ -91,6 +123,17 @@ The endpoint allows to retrive information about single expense.
 | accountId  | String| Required: The ID of the account.
 | expenseId  | String| Required: The ID of the expense.
 | include    | String| Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,...
+
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+        "expenseId": "170573",
+        "include": "category,project"
+}
+```
 
 <a name="createExpense"/>
 ## FreshbooksAPI.createExpense
@@ -135,7 +178,9 @@ The endpoint allows to create new expense.
 ```json
 
 {
-	"amount": "19.99",
+	"accessToken": "xxxxxxxxxxx",
+        "accountId": "V6zRd",
+        "amount": "19.99",
 	"date": "2016-11-07",
 	"staffId": "1",
 	"categoryId": "3977455"
@@ -143,16 +188,26 @@ The endpoint allows to create new expense.
 ```
 <a name="getAllExpenses"/>
 ## FreshbooksAPI.getAllExpenses
-The endpoint allows to retrive information about all expenses.
+The endpoint allows to retrieve information about all expenses.
 
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Required: Access token obtained from getAccessToken method.
 | accountId  | String| Required: The ID of the account.
-| page       | String| Optional: The ID of the retun page. Default 0.
+| page       | String| Optional: The ID of the return page. Default 0.
 | perPage    | String| Optional: Number of results to return. Default 100.
 | search     | String| Optional: Filter to search. Pattern: key=value,key=value,...
 | include    | String| Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,...
+
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+        "include": "category,project"
+}
+```
 
 <a name="updateSingleExpense"/>
 ## FreshbooksAPI.updateSingleExpense
@@ -198,7 +253,10 @@ The endpoint allows to update existing expenses.
 ```json
 
 {
-	"amount": "17.99"
+	"accessToken": "xxxxxxxxxxx",
+        "accountId": "V6zRd",
+        "expenseId": "170573",
+        "amount": "17.99"
 }
 ```
 <a name="deleteSingleExpense"/>
@@ -211,22 +269,43 @@ The endpoint allows to delete expense.
 | accountId  | String| Required: The ID of the account.
 | expenseId  | String| Required: The ID of the expense.
 
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxxxx",
+        "accountId": "V6zRd",
+        "expenseId": "170573"
+}
+```
+
 <a name="getAllExpenseCategories"/>
 ## FreshbooksAPI.getAllExpenseCategories
-The endpoint allows to retrive all expense categories.
+The endpoint allows to retrieve all expense categories.
 
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Required: Access token obtained from getAccessToken method.
 | accountId  | String| Required: The ID of the account.
-| page       | String| Optional: The ID of the retun page. Default 0.
+| page       | String| Optional: The ID of the return page. Default 0.
 | perPage    | String| Optional: Number of results to return. Default 100.
 | search     | String| Optional: Filter to search. Pattern: key=value,key=value,...
 | include    | String| Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,...
 
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+        "search": "categoryids=14231,name=Test",
+        "include": "category,project"
+}
+```
+
 <a name="getSingleExpenseCategory"/>
 ## FreshbooksAPI.getSingleExpenseCategory
-The endpoint allows to retrive information about indecated expense category.
+The endpoint allows to retrieve information about indecated expense category.
 
 | Field      | Type  | Description
 |------------|-------|----------
@@ -234,6 +313,17 @@ The endpoint allows to retrive information about indecated expense category.
 | accountId  | String| Required: The ID of the account.
 | categoryId | String| Required: The ID of the category.
 | include    | String| Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,...
+
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+        "categoryId": "93992990",
+        "include": "expense_usage_all_time"
+}
+```
 
 <a name="getGateways"/>
 ## FreshbooksAPI.getGateways
@@ -243,8 +333,18 @@ The information returned by these endpoints specifies what payment processors ar
 |------------|-------|----------
 | accessToken| String| Required: Access token obtained from getAccessToken method.
 | accountId  | String| Required: The ID of the account.
-| page       | String| Optional: The ID of the retun page. Default 0.
+| page       | String| Optional: The ID of the return page. Default 0.
 | perPage    | String| Optional: Number of results to return. Default 100.
+
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+        "perPage": "25"
+}
+```
 
 <a name="deleteSingleGateway"/>
 ## FreshbooksAPI.deleteSingleGateway
@@ -256,18 +356,38 @@ Endpoint allows to delete single gateway.
 | accountId  | String| Required: The ID of the account.
 | gatewayId  | String| Required: The ID of the gateway.
 
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+        "gatewayId": "1"
+}
+```
+
 <a name="getInvoices"/>
 ## FreshbooksAPI.getInvoices
-This endpoint allows to retrive information about invoices.
+This endpoint allows to retrieve information about invoices.
 
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Required: Access token obtained from getAccessToken method.
 | accountId  | String| Required: The ID of the account.
-| page       | String| Optional: The ID of the retun page. Default 0.
+| page       | String| Optional: The ID of the return page. Default 0.
 | perPage    | String| Optional: Number of results to return. Default 100.
 | search     | String| Optional: Filter to search. Pattern: key=value,key=value,...
 | include    | String| Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,...
+
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+        "perPage": "25"
+}
+```
 
 <a name="createSingleInvoice"/>
 ## FreshbooksAPI.createSingleInvoice
@@ -325,13 +445,16 @@ This endpoint allows to create single invoice.
 ```json
 
 {
-	"customerId": "107490",
-	"createDate": "2016-12-01"
+	"accessToken": "xxxxxxxxxxxxx",
+        "accountId": "V6zRd",
+        "customerId": "107490",
+	"createDate": "2016-12-01",
+        "organization": "My company"
 }
 ```
 <a name="getSingleInvoice"/>
 ## FreshbooksAPI.getSingleInvoice
-This endpoint allows to retrive information about single invoice.
+This endpoint allows to retrieve information about single invoice.
 
 | Field      | Type  | Description
 |------------|-------|----------
@@ -339,6 +462,16 @@ This endpoint allows to retrive information about single invoice.
 | accountId  | String| Required: The ID of the account.
 | invoiceId  | String| Required: The ID of the invoice.
 | include    | String| Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,...
+
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxxxxxx",
+        "accountId": "V6zRd",
+        "invoiceId": "107490"
+}
+```
 
 <a name="updateSingleInvoice"/>
 ## FreshbooksAPI.updateSingleInvoice
@@ -349,7 +482,7 @@ This endpoint allows to update single invoice.
 | accessToken        | String| Required: Access token obtained from getAccessToken method.
 | accountId          | String| Required: The ID of the account.
 | invoiceId          | String| Required: The ID of the invoice.
-| customerId         | String| Required: The ID of the client.
+| customerId         | String| Optional: The ID of the client.
 | createDate         | String| Optional: The date of the invoice.
 | ownerId            | String| Optional: id of creator of invoice. 1 if business admin, other if created by e.g. a contractor.
 | estimateId         | String| Optional: id of associated estimate, 0 if none.
@@ -397,8 +530,11 @@ This endpoint allows to update single invoice.
 ```json
 
 {
-	"customerId": "107490",
-	"currencyCode": "USD"
+	"accessToken": "xxxxxxxxxxxxx",
+        "accountId": "V6zRd",
+        "invoiceId": "126749",
+        "customerId": "107490",
+        "currencyCode": "USD"
 }
 ```
 <a name="deleteSingleInvoice"/>
@@ -411,17 +547,36 @@ This endpoint allows to delete single invoice.
 | accountId  | String| Required: The ID of the account.
 | invoiceId  | String| Required: The ID of the invoice.
 
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxxxxxx",
+        "accountId": "V6zRd",
+        "invoiceId": "126749"
+}
+```
+
 <a name="getItems"/>
 ## FreshbooksAPI.getItems
-This endpoint allows to retrive information about items.
+This endpoint allows to retrieve information about items.
 
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Required: Access token obtained from getAccessToken method.
 | accountId  | String| Required: The ID of the account.
-| page       | String| Optional: The ID of the retun page. Default 0.
+| page       | String| Optional: The ID of the return page. Default 0.
 | perPage    | String| Optional: Number of results to return. Default 100.
 | search     | String| Optional: Filter to search. Pattern: key=value,key=value,...
+
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd"
+}
+```
 
 <a name="createSingleItem"/>
 ## FreshbooksAPI.createSingleItem
@@ -445,23 +600,35 @@ This endpoint allows to create new item.
 ```json
 
 {
-	"name": "Test item new__",
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd"
+	"name": "Test item",
 	"quantity": "1",
 	"inventory": "1",
 	"amount": "1000",
-	"code": "UAH",
+	"code": "USD",
 	"description": "some description about item"
 }
 ```
 <a name="getSingleItem"/>
 ## FreshbooksAPI.getSingleItem
-This endpoint allows to retrive information about single item.
+This endpoint allows to retrieve information about single item.
 
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Required: Access token obtained from getAccessToken method.
 | accountId  | String| Required: The ID of the account.
 | itemId     | String| Required: The ID of the item.
+
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+	"itemId": "123"
+}
+```
 
 <a name="updateSingleItem"/>
 ## FreshbooksAPI.updateSingleItem
@@ -486,7 +653,10 @@ This endpoint allows to update item.
 ```json
 
 {
-	"name": "Test item new upd111",
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+	"itemId": "123",
+	"name": "Test item updated",
 	"quantity": "5"
 }
 ```
@@ -500,18 +670,37 @@ This endpoint allows to update item.
 | accountId  | String| Required: The ID of the account.
 | itemId     | String| Required: The ID of the item.
 
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+	"itemId": "123"
+}
+
 <a name="getPayments"/>
 ## FreshbooksAPI.getPayments
-This endpoint allows to retrive information about payments.
+This endpoint allows to retrieve information about payments.
 
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Required: Access token obtained from getAccessToken method.
 | accountId  | String| Required: The ID of the account.
-| page       | String| Optional: The ID of the retun page. Default 0.
+| page       | String| Optional: The ID of the return page. Default 0.
 | perPage    | String| Optional: Number of results to return. Default 100.
 | search     | String| Optional: Filter to search. Pattern: key=value,key=value,...
 | include    | String| Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,...
+
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+        "include": "client,gateway"
+}
+```
 
 <a name="createSinglePayment"/>
 ## FreshbooksAPI.createSinglePayment
@@ -538,6 +727,8 @@ This endpoint allows to create new payment.
 ```json
 
 {
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
 	"invoiceId": "102830",
 	"amount": "100.00",
 	"date": "2016-11-08",
@@ -546,7 +737,7 @@ This endpoint allows to create new payment.
 ```
 <a name="getSinglePayment"/>
 ## FreshbooksAPI.getSinglePayment
-This endpoint allows to retrive information about single payment.
+This endpoint allows to retrieve information about single payment.
 
 | Field      | Type  | Description
 |------------|-------|----------
@@ -554,6 +745,15 @@ This endpoint allows to retrive information about single payment.
 | accountId  | String| Required: The ID of the account.
 | paymentId  | String| Required: The ID of the payment.
 | include    | String| Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,...
+
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+	"paymentId": "10283055"
+}
 
 <a name="updateSinglePayment"/>
 ## FreshbooksAPI.updateSinglePayment
@@ -581,6 +781,9 @@ This endpoint allows to update payment.
 ```json
 
 {
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+	"paymentId": "10283055",
 	"invoiceId": "102830",
 	"amount": "150"
 }
@@ -594,6 +797,15 @@ This endpoint allows to delete payment.
 | accessToken| String| Required: Access token obtained from getAccessToken method.
 | accountId  | String| Required: The ID of the account.
 | paymentId  | String| Required: The ID of the payment.
+
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+	"paymentId": "10283055"
+}
 
 <a name="getSystemInfo"/>
 ## FreshbooksAPI.getSystemInfo
@@ -609,20 +821,31 @@ An Accounting System represents an entity that can send invoices. It is the cent
 ```json
 
 {
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
 	"systemId": "1"
 }
 ```
 <a name="getTaxes"/>
 ## FreshbooksAPI.getTaxes
-This endpoint allows to retrive information about taxes.
+This endpoint allows to retrieve information about taxes.
 
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Required: Access token obtained from getAccessToken method.
 | accountId  | String| Required: The ID of the account.
-| page       | String| Optional: The ID of the retun page. Default 0.
+| page       | String| Optional: The ID of the return page. Default 0.
 | perPage    | String| Optional: Number of results to return. Default 100.
 | search     | String| Optional: Filter to search. Pattern: key=value,key=value,...
+
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd"
+}
+```
 
 <a name="createSingleTax"/>
 ## FreshbooksAPI.createSingleTax
@@ -641,7 +864,9 @@ This endpoint allows to create new tax.
 ```json
 
 {
-	"name": "new_tax_",
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+	"name": "new_tax",
 	"amount": "2"
 }
 ```
@@ -654,6 +879,15 @@ This endpoint allows to create new tax.
 | accessToken| String| Required: Access token obtained from getAccessToken method.
 | accountId  | String| Required: The ID of the account.
 | taxId      | String| Required: The ID of the tax.
+
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+	"taxId": "1111"
+}
 
 <a name="updateSingleTax"/>
 ## FreshbooksAPI.updateSingleTax
@@ -673,6 +907,9 @@ This endpoint allows to update existing tax.
 ```json
 
 {
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+	"taxId": "1111",
 	"amount": "4"
 }
 ```
@@ -686,18 +923,37 @@ This endpoint allows to delete existing tax.
 | accountId  | String| Required: The ID of the account.
 | taxId      | String| Required: The ID of the tax.
 
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+	"taxId": "1111"
+}
+```
+
 <a name="getClients"/>
 ## FreshbooksAPI.getClients
-This endpoint allows to retrive information about clients.
+This endpoint allows to retrieve information about clients.
 
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Required: Access token obtained from getAccessToken method.
 | accountId  | String| Required: The ID of the account.
-| page       | String| Optional: The ID of the retun page. Default 0.
+| page       | String| Optional: The ID of the return page. Default 0.
 | perPage    | String| Optional: Number of results to return. Default 100.
 | search     | String| Optional: Filter to search. Pattern: key=value,key=value,...
 | include    | String| Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,...
+
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd"
+}
+```
 
 <a name="createSingleClient"/>
 ## FreshbooksAPI.createSingleClient
@@ -742,15 +998,17 @@ This endpoint allows to create new client.
 ```json
 
 {
-	"fname": "Test",
-	"lname": "Testov",
-	"mobPhone": "+380901234567",
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+	"fname": "John",
+	"lname": "Dow",
+	"mobPhone": "+1420901234567",
 	"organization": "TestORG"
 }
 ```
 <a name="getSingleClient"/>
 ## FreshbooksAPI.getSingleClient
-This endpoint allows to retrive information about single client.
+This endpoint allows to retrieve information about single client.
 
 | Field      | Type  | Description
 |------------|-------|----------
@@ -758,6 +1016,16 @@ This endpoint allows to retrive information about single client.
 | accountId  | String| Required: The ID of the account.
 | clientId   | String| Required: The ID of the client.
 | include    | String| Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,...
+
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+	"clientId": "1"
+}
+```
 
 <a name="updateSingleClient"/>
 ## FreshbooksAPI.updateSingleClient
@@ -803,7 +1071,10 @@ This endpoint allows to update client.
 ```json
 
 {
-	"mobPhone": "+380935656677"
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+	"clientId": "1",
+	"mobPhone": "+314235656677"
 }
 ```
 <a name="deleteSingleClient"/>
@@ -816,9 +1087,19 @@ This endpoint allows to delete client.
 | accountId  | String| Required: The ID of the account.
 | clientId   | String| Required: The ID of the client.
 
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+	"clientId": "1"
+}
+```
+
 <a name="getStaffs"/>
 ## FreshbooksAPI.getStaffs
-This endpoint allows to retrive information about staffs.
+This endpoint allows to retrieve information about staffs.
 
 | Field      | Type  | Description
 |------------|-------|----------
@@ -827,9 +1108,18 @@ This endpoint allows to retrive information about staffs.
 | search     | String| Optional: Filter to search. Pattern: key=value,key=value,...
 | include    | String| Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,...
 
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd"
+}
+```
+
 <a name="getSingleStaff"/>
 ## FreshbooksAPI.getSingleStaff
-This endpoint allows to retrive information about single staff.
+This endpoint allows to retrieve information about single staff.
 
 | Field      | Type  | Description
 |------------|-------|----------
@@ -842,6 +1132,8 @@ This endpoint allows to retrive information about single staff.
 ```json
 
 {
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
 	"staffId": "1"
 }
 ```
@@ -880,6 +1172,8 @@ This endpoint allows to update single staff.
 ```json
 
 {
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
 	"staffId": "1",
 	"mobPhone": "+380951234567"
 }
@@ -893,4 +1187,14 @@ This endpoint allows to delete staff.
 | accessToken| String| Required: Access token obtained from getAccessToken method.
 | accountId  | String| Required: The ID of the account.
 | staffId    | String| Required: The ID of the staff.
+
+#### Request example
+```json
+
+{
+	"accessToken": "xxxxxxxxx",
+        "accountId": "V6zRd",
+	"staffId": "1"
+}
+```
 
