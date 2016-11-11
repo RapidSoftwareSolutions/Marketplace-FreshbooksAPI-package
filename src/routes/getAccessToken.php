@@ -26,21 +26,22 @@ $app->post('/api/FreshbooksAPI/getAccessToken', function ($request, $response, $
     
     $error = [];
     if(empty($post_data['args']['clientId'])) {
-        $error[] = 'clientId cannot be empty';
+        $error[] = 'clientId is required';
     }
     if(empty($post_data['args']['clientSecret'])) {
-        $error[] = 'clientSecret cannot be empty';
+        $error[] = 'clientSecret is required';
     }
     if(empty($post_data['args']['code'])) {
-        $error[] = 'code cannot be empty';
+        $error[] = 'code is required';
     }
     if(empty($post_data['args']['redirectUri'])) {
-        $error[] = 'redirectUri cannot be empty';
+        $error[] = 'redirectUri is required';
     }
     
     if(!empty($error)) {
         $result['callback'] = 'error';
-        $result['contextWrites']['to'] = implode(',', $error);
+        $result['contextWrites']['to']['message'] = "There are incomplete fields in your request";
+        $result['contextWrites']['to']['fields'] = $error;
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
     }
     

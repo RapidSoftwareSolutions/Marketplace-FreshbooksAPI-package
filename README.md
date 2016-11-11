@@ -818,7 +818,7 @@ An Accounting System represents an entity that can send invoices. It is the cent
 |------------|-------|----------
 | accessToken| String| Required: Access token obtained from getAccessToken method.
 | accountId  | String| Required: The ID of the account.
-| systemId   | String| Optional: The ID of the system. The value is only meaningful if a user has access to multiple systems.
+| systemId   | String| Required: The ID of the system. The value is only meaningful if a user has access to multiple systems.
 
 #### Request example
 ```json
@@ -1018,8 +1018,8 @@ This endpoint allows to retrieve information about single client.
 |------------|-------|----------
 | accessToken| String| Required: Access token obtained from getAccessToken method.
 | accountId  | String| Required: The ID of the account.
-| clientId   | String| Required: The ID of the client.
-| include    | String| Optional: Indicate wich additional data will be include. Comma-separated. Example: category,project,...
+| id         | String| Required: Unique to this business id for client.
+| include    | String| Optional: Indicate which additional data will be include. Comma-separated. Example: category,project,...
 
 #### Request example
 ```json
@@ -1027,7 +1027,7 @@ This endpoint allows to retrieve information about single client.
 {
 	"accessToken": "xxxxxxxxx",
         "accountId": "V6zRd",
-	"clientId": "1"
+	"id": "1"
 }
 ```
 
@@ -1039,7 +1039,7 @@ This endpoint allows to update client.
 |-----------------|-------|----------
 | accessToken     | String| Required: Access token obtained from getAccessToken method.
 | accountId       | String| Required: The ID of the account.
-| clientId        | String| Required: The ID of the client.
+| id              | String| Required: Unique to this business id for client.
 | busPhone        | String| Optional: business phone number.
 | companyIndustry | String| Optional: description of industry client is in.
 | companySize     | String| Optional: size of client's company.
@@ -1077,7 +1077,7 @@ This endpoint allows to update client.
 {
 	"accessToken": "xxxxxxxxx",
         "accountId": "V6zRd",
-	"clientId": "1",
+	"id": "1",
 	"mobPhone": "+314235656677"
 }
 ```
@@ -1089,7 +1089,7 @@ This endpoint allows to delete client.
 |------------|-------|----------
 | accessToken| String| Required: Access token obtained from getAccessToken method.
 | accountId  | String| Required: The ID of the account.
-| clientId   | String| Required: The ID of the client.
+| id         | String| Required: Unique to this business id for client.
 
 #### Request example
 ```json
@@ -1097,7 +1097,7 @@ This endpoint allows to delete client.
 {
 	"accessToken": "xxxxxxxxx",
         "accountId": "V6zRd",
-	"clientId": "1"
+	"id": "1"
 }
 ```
 

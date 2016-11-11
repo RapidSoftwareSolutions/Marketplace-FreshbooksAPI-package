@@ -26,27 +26,28 @@ $app->post('/api/FreshbooksAPI/createSinglePayment', function ($request, $respon
     
     $error = [];
     if(empty($post_data['args']['accessToken'])) {
-        $error[] = 'accessToken cannot be empty';
+        $error[] = 'accessToken is required';
     }
     if(empty($post_data['args']['accountId'])) {
-        $error[] = 'accountId cannot be empty';
+        $error[] = 'accountId is required';
     }
     if(empty($post_data['args']['invoiceId'])) {
-        $error[] = 'invoiceId cannot be empty';
+        $error[] = 'invoiceId is required';
     }
     if(empty($post_data['args']['amount'])) {
-        $error[] = 'amount cannot be empty';
+        $error[] = 'amount is required';
     }
     if(empty($post_data['args']['date'])) {
-        $error[] = 'date cannot be empty';
+        $error[] = 'date is required';
     }
     if(empty($post_data['args']['type'])) {
-        $error[] = 'type cannot be empty';
+        $error[] = 'type is required';
     }
     
     if(!empty($error)) {
         $result['callback'] = 'error';
-        $result['contextWrites']['to'] = implode(',', $error);
+        $result['contextWrites']['to']['message'] = "There are incomplete fields in your request";
+        $result['contextWrites']['to']['fields'] = $error;
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
     }
     

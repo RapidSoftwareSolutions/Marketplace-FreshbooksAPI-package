@@ -26,22 +26,23 @@ $app->post('/api/FreshbooksAPI/getSingleClient', function ($request, $response, 
     
     $error = [];
     if(empty($post_data['args']['accessToken'])) {
-        $error[] = 'accessToken cannot be empty';
+        $error[] = 'accessToken is required';
     }
     if(empty($post_data['args']['accountId'])) {
-        $error[] = 'accountId cannot be empty';
+        $error[] = 'accountId is required';
     }
-    if(empty($post_data['args']['clientId'])) {
-        $error[] = 'clientId cannot be empty';
+    if(empty($post_data['args']['id'])) {
+        $error[] = 'id is required';
     }
     
     if(!empty($error)) {
         $result['callback'] = 'error';
-        $result['contextWrites']['to'] = implode(',', $error);
+        $result['contextWrites']['to']['message'] = "There are incomplete fields in your request";
+        $result['contextWrites']['to']['fields'] = $error;
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
     }
     
-    $query_str = 'https://api.freshbooks.com/accounting/account/'.$post_data['args']['accountId'].'/users/clients/'.$post_data['args']['clientId'];
+    $query_str = 'https://api.freshbooks.com/accounting/account/'.$post_data['args']['accountId'].'/users/clients/'.$post_data['args']['id'];
     
     $headers['Api-Version'] = 'alpha';
     $headers['Content-Type'] = 'application/json';

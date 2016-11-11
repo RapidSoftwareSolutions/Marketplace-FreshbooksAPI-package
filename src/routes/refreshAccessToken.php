@@ -26,21 +26,22 @@ $app->post('/api/FreshbooksAPI/refreshAccessToken', function ($request, $respons
     
     $error = [];
     if(empty($post_data['args']['clientId'])) {
-        $error[] = 'clientId cannot be empty';
+        $error[] = 'clientId is required';
     }
     if(empty($post_data['args']['clientSecret'])) {
-        $error[] = 'clientSecret cannot be empty';
+        $error[] = 'clientSecret is required';
     }
     if(empty($post_data['args']['refreshToken'])) {
-        $error[] = 'refreshToken cannot be empty';
+        $error[] = 'refreshToken is required';
     }
     if(empty($post_data['args']['redirectUri'])) {
-        $error[] = 'redirectUri cannot be empty';
+        $error[] = 'redirectUri is required';
     }
     
     if(!empty($error)) {
         $result['callback'] = 'error';
-        $result['contextWrites']['to'] = implode(',', $error);
+        $result['contextWrites']['to']['message'] = "There are incomplete fields in your request";
+        $result['contextWrites']['to']['fields'] = $error;
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
     }
     
@@ -49,7 +50,7 @@ $app->post('/api/FreshbooksAPI/refreshAccessToken', function ($request, $respons
     $headers['Api-Version'] = 'alpha';
     $headers['Content-Type'] = 'application/json';
     
-    $body['grant_type'] = 'refresh_code';
+    $body['grant_type'] = 'refresh_token';
     $body['client_secret'] = $post_data['args']['clientSecret'];
     $body['refresh_token'] = $post_data['args']['refreshToken'];
     $body['client_id'] = $post_data['args']['clientId'];

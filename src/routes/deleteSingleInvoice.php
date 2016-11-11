@@ -26,18 +26,19 @@ $app->post('/api/FreshbooksAPI/deleteSingleInvoice', function ($request, $respon
     
     $error = [];
     if(empty($post_data['args']['accessToken'])) {
-        $error[] = 'accessToken cannot be empty';
+        $error[] = 'accessToken is required';
     }
     if(empty($post_data['args']['accountId'])) {
-        $error[] = 'accountId cannot be empty';
+        $error[] = 'accountId is required';
     }
     if(empty($post_data['args']['invoiceId'])) {
-        $error[] = 'invoiceId cannot be empty';
+        $error[] = 'invoiceId is required';
     }
     
     if(!empty($error)) {
         $result['callback'] = 'error';
-        $result['contextWrites']['to'] = implode(',', $error);
+        $result['contextWrites']['to']['message'] = "There are incomplete fields in your request";
+        $result['contextWrites']['to']['fields'] = $error;
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
     }
     
