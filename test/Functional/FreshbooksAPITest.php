@@ -709,7 +709,7 @@ class FreshbooksAPITest extends BaseTestCase {
                     "args": {
                             "accessToken": "eaeb10d2465d7eab218ca522afda9630c4212d059631dbf67cf8415acc246faa",
                             "accountId": "V6zRd",
-                            "clientId": "'.$clientId.'"
+                            "id": "'.$clientId.'"
                     }
                 }';
         $post_data = json_decode($var, true);
@@ -731,7 +731,7 @@ class FreshbooksAPITest extends BaseTestCase {
                     "args": {
                             "accessToken": "eaeb10d2465d7eab218ca522afda9630c4212d059631dbf67cf8415acc246faa",
                             "accountId": "V6zRd",
-                            "clientId": "'.$clientId.'",
+                            "id": "'.$clientId.'",
                             "mobPhone": "+380935656677"
                     }
                 }';
@@ -754,7 +754,7 @@ class FreshbooksAPITest extends BaseTestCase {
                     "args": {
                             "accessToken": "eaeb10d2465d7eab218ca522afda9630c4212d059631dbf67cf8415acc246faa",
                             "accountId": "V6zRd",
-                            "clientId": "'.$clientId.'"
+                            "id": "'.$clientId.'"
                     }
                 }';
         $post_data = json_decode($var, true);
