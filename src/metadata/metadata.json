@@ -2705,6 +2705,37 @@
           "info": "Success"
         }
       ]
+    },
+        {
+      "name": "deleteSingleStaff",
+      "description": "This endpoint allows to delete staff.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: Access token obtained from getAccessToken method."
+        },
+        {
+          "name": "accountId",
+          "type": "String",
+          "info": "Required: The ID of the account."
+        },
+        {
+          "name": "staffId",
+          "type": "String",
+          "info": "Required: The ID of the staff."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     }
   ]
 }
