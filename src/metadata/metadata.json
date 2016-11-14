@@ -658,73 +658,6 @@
       ]
     },
     {
-      "name": "getGateways",
-      "description": "The information returned by these endpoints specifies what payment processors are enabled for your Businesses.",
-      "args": [
-        {
-          "name": "accessToken",
-          "type": "String",
-          "info": "Required: Access token obtained from getAccessToken method."
-        },
-        {
-          "name": "accountId",
-          "type": "String",
-          "info": "Required: The ID of the account."
-        },
-        {
-          "name": "page",
-          "type": "String",
-          "info": "Optional: The ID of the retun page. Default 0."
-        },
-        {
-          "name": "perPage",
-          "type": "String",
-          "info": "Optional: Number of results to return. Default 100."
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "deleteSingleGateway",
-      "description": "Endpoint allows to delete single gateway.",
-      "args": [
-        {
-          "name": "accessToken",
-          "type": "String",
-          "info": "Required: Access token obtained from getAccessToken method."
-        },
-        {
-          "name": "accountId",
-          "type": "String",
-          "info": "Required: The ID of the account."
-        },
-        {
-          "name": "gatewayId",
-          "type": "String",
-          "info": "Required: The ID of the gateway."
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
       "name": "getInvoices",
       "description": "This endpoint allows to retrive information about invoices.",
       "args": [
@@ -2760,37 +2693,6 @@
           "name": "currencyCode",
           "type": "String",
           "info": "Optional: 3-letter shortcode for preferred currency."
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "deleteSingleStaff",
-      "description": "This endpoint allows to delete staff.",
-      "args": [
-        {
-          "name": "accessToken",
-          "type": "String",
-          "info": "Required: Access token obtained from getAccessToken method."
-        },
-        {
-          "name": "accountId",
-          "type": "String",
-          "info": "Required: The ID of the account."
-        },
-        {
-          "name": "staffId",
-          "type": "String",
-          "info": "Required: The ID of the staff."
         }
       ],
       "callbacks": [
