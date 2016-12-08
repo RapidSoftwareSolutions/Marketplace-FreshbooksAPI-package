@@ -1,5 +1,5 @@
 # FreshbooksAPI Package
-The API makes it easy to create web and desktop applications that integrate with your account. Possible uses for it include automatically creating and sending invoices when users sign up on your website, pulling lists of client information, copying data to 3rd party services, and more.
+Manage invoices, taxes and expenses programmatically.
 * Domain: freshbooks.com
 * Credentials: clientId, clientSecret
 
