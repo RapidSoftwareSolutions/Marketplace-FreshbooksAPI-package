@@ -78,7 +78,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "http://rapidoauth.com/freshbooks"
                 }],
             "callbacks": [{
                     "name": "error",
@@ -94,7 +95,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "http://rapidoauth.com/freshbooks"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -125,7 +127,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "http://rapidoauth.com/freshbooks"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -296,7 +299,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "http://rapidoauth.com/freshbooks"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -337,7 +341,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "http://rapidoauth.com/freshbooks"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -513,7 +518,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "http://rapidoauth.com/freshbooks"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -539,7 +545,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "http://rapidoauth.com/freshbooks"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -580,7 +587,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "http://rapidoauth.com/freshbooks"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -611,7 +619,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "http://rapidoauth.com/freshbooks"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -652,7 +661,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "http://rapidoauth.com/freshbooks"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -888,7 +898,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "http://rapidoauth.com/freshbooks"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -919,7 +930,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "http://rapidoauth.com/freshbooks"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1160,7 +1172,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1186,7 +1199,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1222,7 +1236,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1288,7 +1303,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1314,7 +1330,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1385,7 +1402,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1411,7 +1429,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1452,7 +1471,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1533,7 +1553,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1564,7 +1585,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1650,7 +1672,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1676,7 +1699,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1702,7 +1726,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1738,7 +1763,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1779,7 +1805,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1805,7 +1832,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1851,7 +1879,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1877,7 +1906,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -1918,7 +1948,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -2089,7 +2120,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -2120,7 +2152,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -2296,7 +2329,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -2322,7 +2356,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -2353,7 +2388,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -2384,7 +2420,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
@@ -2515,7 +2552,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "Access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://developer.edamam.com/"
                 }, {
                     "name": "accountId",
                     "type": "String",
