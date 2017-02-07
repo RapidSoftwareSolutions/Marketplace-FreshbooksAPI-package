@@ -1,3 +1,5 @@
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/FreshbooksAPI/functions?utm_source=RapidAPIGitHub_FreshbooksFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+
 # FreshbooksAPI Package
 Manage invoices, taxes and expenses programmatically.
 * Domain: freshbooks.com
