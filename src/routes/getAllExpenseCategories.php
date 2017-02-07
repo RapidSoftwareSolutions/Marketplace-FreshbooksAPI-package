@@ -46,17 +46,21 @@ $app->post('/api/FreshbooksAPI/getAllExpenseCategories', function ($request, $re
     $headers['Api-Version'] = 'alpha';
     $headers['Content-Type'] = 'application/json';
     $headers['Authorization'] = 'Bearer '.$post_data['args']['accessToken'];
-    
-    $query = [];
+
+    //$query = [];
     if(!empty($post_data['args']['page'])) {
-        $query['page'] = (int) $post_data['args']['page'];
+        $query_str .= '?page=' . (int) $post_data['args']['page'];
+        //$query['page'] = (int) $post_data['args']['page'];
     } else {
-        $query['page'] = (int) 0;
+        $query_str .= '?page=' . (int) 0;
+        //$query['page'] = (int) 0;
     }
     if(!empty($post_data['args']['perPage'])) {
-        $query['per_page'] = (int) $post_data['args']['perPage'];
+        $query_str .= '&per_page=' . (int) $post_data['args']['perPage'];
+        //$query['per_page'] = (int) $post_data['args']['perPage'];
     } else {
-        $query['per_page'] = (int) 100;
+        $query_str .= '&per_page=' . (int) 100;
+        //$query['per_page'] = (int) 100;
     }
     if(!empty($post_data['args']['search'])) {
         $inc = explode(',', $post_data['args']['search']);
@@ -98,8 +102,8 @@ $app->post('/api/FreshbooksAPI/getAllExpenseCategories', function ($request, $re
 
         $resp = $client->get( $query_str, 
             [
-                'headers' => $headers,
-                'query' => $query
+                'headers' => $headers
+                //'query' => $query
             ]);
         $responseBody = $resp->getBody()->getContents();
   
