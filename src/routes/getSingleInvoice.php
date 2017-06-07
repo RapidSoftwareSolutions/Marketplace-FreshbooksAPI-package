@@ -53,7 +53,7 @@ $app->post('/api/FreshbooksAPI/getSingleInvoice', function ($request, $response,
     $client = $this->httpClient;
     
     if(!empty($post_data['args']['include'])) {
-        $inc = explode(',', $post_data['args']['include']);
+        $inc = is_array($post_data['args']['include']) ? $post_data['args']['include'] : explode(',', $post_data['args']['include']);
         $res = '';
         $i=1;
         foreach($inc as $item) {

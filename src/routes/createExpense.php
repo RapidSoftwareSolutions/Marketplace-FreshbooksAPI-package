@@ -60,7 +60,8 @@ $app->post('/api/FreshbooksAPI/createExpense', function ($request, $response, $a
     $headers['Authorization'] = 'Bearer '.$post_data['args']['accessToken'];
     
     $body['expense']['amount']['amount'] = $post_data['args']['amount'];
-    $body['expense']['date'] = $post_data['args']['date'];
+    $dateTime = new DateTime($post_data['args']['date']);
+    $body['expense']['date'] = $dateTime->format('Y-m-d');
     $body['expense']['staffid'] = $post_data['args']['staffId'];
     $body['expense']['categoryid'] = $post_data['args']['categoryId'];
     if(!empty($post_data['args']['markupPercent'])) {

@@ -55,7 +55,8 @@ $app->post('/api/FreshbooksAPI/updateSingleExpense', function ($request, $respon
         $body['expense']['amount']['amount'] = $post_data['args']['amount'];
     }
     if(!empty($post_data['args']['date'])) {
-        $body['expense']['date'] = $post_data['args']['date'];
+        $dateTime = new DateTime($post_data['args']['date']);
+        $body['expense']['date'] = $dateTime->format('Y-m-d');
     }
     if(!empty($post_data['args']['staffId'])) {
         $body['expense']['staffid'] = $post_data['args']['staffId'];

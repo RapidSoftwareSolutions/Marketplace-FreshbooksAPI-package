@@ -63,7 +63,8 @@ $app->post('/api/FreshbooksAPI/updateSinglePayment', function ($request, $respon
         $body['payment']['amount']['amount'] = (float) $post_data['args']['amount'];
     }
     if(!empty($post_data['args']['date'])) {
-        $body['payment']['date'] = $post_data['args']['date'];
+        $dateTime = new DateTime($post_data['args']['date']);
+        $body['payment']['date'] = $dateTime->format('Y-m-d');
     }
     if(!empty($post_data['args']['type'])) {
         $body['payment']['type'] = $post_data['args']['type'];

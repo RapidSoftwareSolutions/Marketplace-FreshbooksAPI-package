@@ -55,7 +55,8 @@ $app->post('/api/FreshbooksAPI/createSingleInvoice', function ($request, $respon
     
     $body = [];
     $body['invoice']['customerid'] = $post_data['args']['customerId'];
-    $body['invoice']['create_date'] = $post_data['args']['createDate'];
+    $dateTime = new DateTime($post_data['args']['createDate']);
+    $body['invoice']['create_date'] = $dateTime->format('Y-m-d');
 
     if(!empty($post_data['args']['ownerId'])) {
         $body['invoice']['ownerid'] = $post_data['args']['ownerId'];
@@ -103,7 +104,8 @@ $app->post('/api/FreshbooksAPI/createSingleInvoice', function ($request, $respon
         $body['invoice']['invoice_number'] = $post_data['args']['invoiceNumber'];
     }
     if(!empty($post_data['args']['generationDate'])) {
-        $body['invoice']['generation_date'] = $post_data['args']['generationDate'];
+        $dateTime = new DateTime($post_data['args']['generationDate']);
+        $body['invoice']['generation_date'] = $dateTime->format('Y-m-d');
     }
     if(!empty($post_data['args']['discountValue'])) {
         $body['invoice']['discount_value'] = $post_data['args']['discountValue'];

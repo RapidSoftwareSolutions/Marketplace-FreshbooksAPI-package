@@ -63,7 +63,7 @@ $app->post('/api/FreshbooksAPI/getAllExpenseCategories', function ($request, $re
         //$query['per_page'] = (int) 100;
     }
     if(!empty($post_data['args']['search'])) {
-        $inc = explode(',', $post_data['args']['search']);
+        $inc = is_array($post_data['args']['search']) ? $post_data['args']['search'] : explode(',', $post_data['args']['search']);
         $res = '';
         $i=1;
         foreach($inc as $item) {
@@ -80,7 +80,7 @@ $app->post('/api/FreshbooksAPI/getAllExpenseCategories', function ($request, $re
         }
     }
     if(!empty($post_data['args']['include'])) {
-        $inc = explode(',', $post_data['args']['include']);
+        $inc = is_array($post_data['args']['include']) ? $post_data['args']['include'] : explode(',', $post_data['args']['include']);
         $res = '';
         $i=1;
         foreach($inc as $item) {
