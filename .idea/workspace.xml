@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f80c3112-fa52-448a-a6bf-db3e232d6081" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/metadata/metadata.json" afterPath="$PROJECT_DIR$/src/metadata/metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/createExpense.php" afterPath="$PROJECT_DIR$/src/routes/createExpense.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/createSingleInvoice.php" afterPath="$PROJECT_DIR$/src/routes/createSingleInvoice.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/createSinglePayment.php" afterPath="$PROJECT_DIR$/src/routes/createSinglePayment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/getAllExpenseCategories.php" afterPath="$PROJECT_DIR$/src/routes/getAllExpenseCategories.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/getAllExpenses.php" afterPath="$PROJECT_DIR$/src/routes/getAllExpenses.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/getClients.php" afterPath="$PROJECT_DIR$/src/routes/getClients.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/getExpense.php" afterPath="$PROJECT_DIR$/src/routes/getExpense.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/getInvoices.php" afterPath="$PROJECT_DIR$/src/routes/getInvoices.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/getItems.php" afterPath="$PROJECT_DIR$/src/routes/getItems.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/getPayments.php" afterPath="$PROJECT_DIR$/src/routes/getPayments.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/getSingleClient.php" afterPath="$PROJECT_DIR$/src/routes/getSingleClient.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/getSingleExpenseCategory.php" afterPath="$PROJECT_DIR$/src/routes/getSingleExpenseCategory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/getSingleInvoice.php" afterPath="$PROJECT_DIR$/src/routes/getSingleInvoice.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/getSinglePayment.php" afterPath="$PROJECT_DIR$/src/routes/getSinglePayment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/getSingleStaff.php" afterPath="$PROJECT_DIR$/src/routes/getSingleStaff.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/getStaffs.php" afterPath="$PROJECT_DIR$/src/routes/getStaffs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/getTaxes.php" afterPath="$PROJECT_DIR$/src/routes/getTaxes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/updateSingleExpense.php" afterPath="$PROJECT_DIR$/src/routes/updateSingleExpense.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/updateSingleInvoice.php" afterPath="$PROJECT_DIR$/src/routes/updateSingleInvoice.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/updateSinglePayment.php" afterPath="$PROJECT_DIR$/src/routes/updateSinglePayment.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,12 +18,12 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="metadata.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/metadata/metadata.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+            <state relative-caret-position="424">
+              <caret line="2720" column="27" lean-forward="false" selection-start-line="2720" selection-start-column="27" selection-end-line="2720" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -52,11 +33,21 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="255">
-                <caret line="17" column="70" lean-forward="true" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
+              <first_editor relative-caret-position="368">
+                <caret line="558" column="34" lean-forward="false" selection-start-line="558" selection-start-column="34" selection-end-line="558" selection-end-column="34" />
                 <folding />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getAllExpenses.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/routes/getAllExpenses.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="53" column="37" lean-forward="false" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,6 +68,7 @@
       <find>searc</find>
       <find>inclu</find>
       <find>visS</find>
+      <find>createSingleCl</find>
     </findStrings>
     <replaceStrings>
       <replace>which</replace>
@@ -122,9 +114,9 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="1985" />
-    <option name="y" value="24" />
+    <option name="y" value="52" />
     <option name="width" value="1855" />
-    <option name="height" value="1056" />
+    <option name="height" value="1028" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -208,8 +200,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -225,32 +217,33 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1496821112901</updated>
-      <workItem from="1496821115639" duration="3578000" />
+      <workItem from="1496821115639" duration="4370000" />
+      <workItem from="1497011919481" duration="1033000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3578000" />
+    <option name="totallyTimeSpent" value="5403000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1985" y="24" width="1855" height="1056" extended-state="6" />
+    <frame x="1985" y="52" width="1855" height="1028" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959569" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -266,11 +259,29 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/metadata/metadata.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -362,14 +373,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/getAllExpenses.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="67" column="130" lean-forward="false" selection-start-line="67" selection-start-column="130" selection-end-line="67" selection-end-column="130" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/getAllExpenseCategories.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -450,10 +453,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/getAllExpenses.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="53" column="37" lean-forward="false" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/metadata/metadata.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        <state relative-caret-position="424">
+          <caret line="2720" column="27" lean-forward="false" selection-start-line="2720" selection-start-column="27" selection-end-line="2720" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -461,8 +472,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="255">
-            <caret line="17" column="70" lean-forward="true" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
+          <first_editor relative-caret-position="368">
+            <caret line="558" column="34" lean-forward="false" selection-start-line="558" selection-start-column="34" selection-end-line="558" selection-end-column="34" />
             <folding />
           </first_editor>
           <second_editor />

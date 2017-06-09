@@ -559,7 +559,7 @@ This endpoint allows to create new client.
 | shippingStreet2 | String| shipping address second street info.
 | vatName         | String| Value Added Tax name.
 | vatNumber       | String| Value Added Tax number.
-| visState        | Select| "visibility state", active, deleted, or archived.
+| visState        | Number| "visibility state", active, deleted, or archived.
 
 ## FreshbooksAPI.getSingleClient
 This endpoint allows to retrive information about single client.

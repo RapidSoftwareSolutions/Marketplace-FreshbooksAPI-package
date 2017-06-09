@@ -2718,8 +2718,7 @@
         },
         {
           "name": "visState",
-          "type": "Select",
-          "options": ["active", "deleted", "archived"],
+          "type": "Number",
           "info": "\"visibility state\", active, deleted, or archived.",
           "required": false
         }
