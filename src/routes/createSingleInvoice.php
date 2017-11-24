@@ -13,7 +13,6 @@ $app->post('/api/FreshbooksAPI/createSingleInvoice', function ($request, $respon
         $data = str_replace('\"', '"', $data);
         $post_data = json_decode($data, true);
     }
-    
     if(json_last_error() != 0) {
         $error[] = json_last_error_msg() . '. Incorrect input JSON. Please, check fields with JSON input.';
     }
@@ -68,9 +67,9 @@ $app->post('/api/FreshbooksAPI/createSingleInvoice', function ($request, $respon
         $body['invoice']['basecampid'] = $post_data['args']['basecampId'];
     }
     if(!empty($post_data['args']['sentId'])) {
-        $body['invoice']['sentid'] = $post_data['args']['sentId'];
+        $body['invoice']['sentId'] = $post_data['args']['sentId'];
     }
-    if(!empty($post_data['args']['status'])) {
+    if(isset($post_data['args']['status']) && strlen($post_data['args']['status']) > 0) {
         $body['invoice']['status'] = $post_data['args']['status'];
     }
     if(!empty($post_data['args']['parent'])) {
@@ -182,7 +181,6 @@ $app->post('/api/FreshbooksAPI/createSingleInvoice', function ($request, $respon
     if(!empty($post_data['args']['dueOffsetDays'])) {
         $body['invoice']['due_offset_days'] = $post_data['args']['dueOffsetDays'];
     }
-    
     $client = $this->httpClient;
 
     try {

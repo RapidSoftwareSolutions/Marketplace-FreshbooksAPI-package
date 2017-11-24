@@ -2,7 +2,7 @@
 
 # FreshbooksAPI Package
 Manage invoices, taxes and expenses programmatically.
-* Domain: [FreshbooksAPI](http://freshbooks.com)
+* Domain: [FreshbooksAPI](http://https://freshbooks.com)
 * Credentials: clientId, clientSecret
 
 ## How to get credentials: 
@@ -10,6 +10,8 @@ Manage invoices, taxes and expenses programmatically.
 1. Go to [Developer section](https://my.freshbooks.com/#/developer)
 2. Create an App
 3. After creating app you will see Client ID and Client
+
+
 
 ## Custom datatypes: 
  |Datatype|Description|Example
@@ -67,20 +69,20 @@ The endpoint allows to create new expense.
 | accountId    | String    | The ID of the account.
 | amount       | String    | The amount of the expense.
 | date         | DatePicker| The date of the expense.
-| staffId      | String    | id of related staff member if applicable.
-| categoryId   | String    | id of related expense category.
+| staffId      | Number    | id of related staff member if applicable.
+| categoryId   | Number    | id of related expense category.
 | markupPercent| String    | string-decimal, note of percent to mark expense up.
-| projectId    | String    | id of related project if applicable.
-| clientId     | String    | id of related client if applicable.
+| projectId    | Number    | id of related project if applicable.
+| clientId     | Number    | id of related client if applicable.
 | taxPercent1  | String    | string-decimal tax amount.
 | taxName1     | String    | name of first tax.
 | taxPercent2  | String    | string-decimal tax amount for second tax.
 | taxName2     | String    | name of second tax.
-| isDuplicate  | String    | true/false is duplicated expense.
-| profileId    | String    | id of related profile if applicable.
+| isDuplicate  | Select    | true/false is duplicated expense.
+| profileId    | Number    | id of related profile if applicable.
 | accountName  | String    | name of related account if applicable.
-| transactionId| String    | id of related transaction if applicable.
-| invoiceId    | String    | id of related invoice if applicable.
+| transactionId| Number    | id of related transaction if applicable.
+| invoiceId    | Number    | id of related invoice if applicable.
 | taxAmount1   | String    | amount for first tax.
 | taxCode1     | String    | 3-letter currency code for first tax.
 | taxAmount2   | String    | amount for second tax.
@@ -89,12 +91,12 @@ The endpoint allows to create new expense.
 | status       | Select    | values from expense status table. 0 - internal (-internal- rather than client); 1 - outstanding (has client, needs to be applied to an invoice); 2 - invoiced (has client, attached to an invoice); 4 - recouped (has client, attached to an invoice, and paid).
 | bankName     | String    | name of bank expense was imported from, if applicable.
 | vendor       | String    | name of vendor.
-| extSystemId  | String    | id of related contractor system if applicable.
-| hasReceipt   | String    | true/false has receipt attached.
+| extSystemId  | Number    | id of related contractor system if applicable.
+| hasReceipt   | Select    | true/false has receipt attached.
 | notes        | String    | notes about expense.
-| extInvoiceId | String    | id of related contractor invoice if applicable.
+| extInvoiceId | Number    | id of related contractor invoice if applicable.
 | amountCode   | String    | 3-letter currency code.
-| compoundedTax| String    | true/false tax2 was a compound tax.
+| compoundedTax| Select    | true/false tax2 was a compound tax.
 
 ## FreshbooksAPI.getAllExpenses
 The endpoint allows to retrive information about all expenses.
@@ -103,8 +105,8 @@ The endpoint allows to retrive information about all expenses.
 |------------|-------|----------
 | accessToken| String| Access token obtained from getAccessToken method.
 | accountId  | String| The ID of the account.
-| page       | String| The ID of the retun page. Default 0.
-| perPage    | String| Number of results to return. Default 100.
+| page       | Number| The ID of the retun page. Default 0.
+| perPage    | Number| Number of results to return. Default 100.
 | search     | List  | Filter to search. Pattern: key=value,key=value,...
 | include    | List  | Indicate which additional data will be include. Array. Example: category,project,...
 
@@ -114,24 +116,24 @@ The endpoint allows to update existing expenses.
 | Field        | Type      | Description
 |--------------|-----------|----------
 | accessToken  | String    | Access token obtained from getAccessToken method.
-| accountId    | String    | The ID of the account.
-| expenseId    | String    | The ID of the expense.
+| accountId    | Number    | The ID of the account.
+| expenseId    | Number    | The ID of the expense.
 | amount       | String    | The amount of the expense.
 | date         | DatePicker| The date of the expense.
-| staffId      | String    | id of related staff member if applicable.
-| categoryId   | String    | id of related expense category.
+| staffId      | Number    | id of related staff member if applicable.
+| categoryId   | Number    | id of related expense category.
 | markupPercent| String    | string-decimal, note of percent to mark expense up.
-| projectId    | String    | id of related project if applicable.
-| clientId     | String    | id of related client if applicable.
+| projectId    | Number    | id of related project if applicable.
+| clientId     | Number    | id of related client if applicable.
 | taxPercent1  | String    | string-decimal tax amount.
 | taxName1     | String    | name of first tax.
 | taxPercent2  | String    | string-decimal tax amount for second tax.
 | taxName2     | String    | name of second tax.
-| isDuplicate  | String    | true/false is duplicated expense.
-| profileId    | String    | id of related profile if applicable.
+| isDuplicate  | Select    | true/false is duplicated expense.
+| profileId    | Number    | id of related profile if applicable.
 | accountName  | String    | name of related account if applicable.
-| transactionId| String    | id of related transaction if applicable.
-| invoiceId    | String    | id of related invoice if applicable.
+| transactionId| Number    | id of related transaction if applicable.
+| invoiceId    | Number    | id of related invoice if applicable.
 | taxAmount1   | String    | amount for first tax.
 | taxCode1     | String    | 3-letter currency code for first tax.
 | taxAmount2   | String    | amount for second tax.
@@ -140,12 +142,12 @@ The endpoint allows to update existing expenses.
 | status       | Select    | values from expense status table. 0 - internal (-internal- rather than client); 1 - outstanding (has client, needs to be applied to an invoice); 2 - invoiced (has client, attached to an invoice); 4 - recouped (has client, attached to an invoice, and paid).
 | bankName     | String    | name of bank expense was imported from, if applicable.
 | vendor       | String    | name of vendor.
-| extSystemId  | String    | id of related contractor system if applicable.
-| hasReceipt   | String    | true/false has receipt attached.
+| extSystemId  | Number    | id of related contractor system if applicable.
+| hasReceipt   | Select    | true/false has receipt attached.
 | notes        | String    | notes about expense.
-| extInvoiceId | String    | id of related contractor invoice if applicable.
+| extInvoiceId | Number    | id of related contractor invoice if applicable.
 | amountCode   | String    | 3-letter currency code.
-| compoundedTax| String    | true/false tax2 was a compound tax.
+| compoundedTax| Select    | true/false tax2 was a compound tax.
 
 ## FreshbooksAPI.deleteSingleExpense
 The endpoint allows to delete expense.
@@ -163,8 +165,8 @@ The endpoint allows to retrive all expense categories.
 |------------|-------|----------
 | accessToken| String| Access token obtained from getAccessToken method.
 | accountId  | String| The ID of the account.
-| page       | String| The ID of the retun page. Default 0.
-| perPage    | String| Number of results to return. Default 100.
+| page       | Number| The ID of the retun page. Default 0.
+| perPage    | Number| Number of results to return. Default 100.
 | search     | List  | Filter to search. Pattern: key=value,key=value,...
 | include    | List  | Indicate which additional data will be include. Array. Example: category,project,...
 
@@ -185,8 +187,8 @@ This endpoint allows to retrive information about invoices.
 |------------|-------|----------
 | accessToken| String| Access token obtained from getAccessToken method.
 | accountId  | String| The ID of the account.
-| page       | String| The ID of the retun page. Default 0.
-| perPage    | String| Number of results to return. Default 100.
+| page       | Number| The ID of the retun page. Default 0.
+| perPage    | Number| Number of results to return. Default 100.
 | search     | List  | Filter to search. Pattern: key=value,key=value,...
 | include    | List  | Indicate which additional data will be include. Comma-separated. Example: category,project,...
 
@@ -199,19 +201,19 @@ This endpoint allows to create single invoice.
 | accountId          | String    | The ID of the account.
 | customerId         | String    | The ID of the client.
 | createDate         | DatePicker| The date of the invoice.
-| ownerId            | String    | id of creator of invoice. 1 if business admin, other if created by e.g. a contractor.
-| estimateId         | String    | id of associated estimate, 0 if none.
-| basecampId         | String    | id of connected basecamp account, 0 if none.
-| sentId             | String    | userid of user who sent the invoice, typically 1 for admin.
+| ownerId            | Number    | id of creator of invoice. 1 if business admin, other if created by e.g. a contractor.
+| estimateId         | Number    | id of associated estimate, 0 if none.
+| basecampId         | Number    | id of connected basecamp account, 0 if none.
+| sentId             | Number    | userid of user who sent the invoice, typically 1 for admin.
 | status             | String    | Invoice Status.
-| parent             | String    | id of object this invoice was generated from, 0 if none.
+| parent             | Number    | id of object this invoice was generated from, 0 if none.
 | displayStatus      | Select    | Description of status shown in FreshBooks UI, one of 'draft', 'created', 'sent', 'viewed', or 'outstanding'.
 | autobillStatus     | String    | one of retry, failed, or success.
 | paymentStatus      | Select    | description of payment status. One of 'unpaid', 'partial', 'paid', and 'auto-paid'. See the v3_status table on this page for descriptions of each.
 | lastOrderStatus    | String    | describes status of last attempted payment.
 | disputeStatus      | String    | description of whether invoice has been disputed.
 | depositStatus      | Select    | description of deposits applied to invoice. One of 'paid', 'unpaid', 'partial', 'none', and 'converted'.
-| autoBill           | String    | whether this invoice has a credit card saved.
+| autoBill           | Select    | whether this invoice has a credit card saved.
 | v3Status           | String    | description of Invoice Status, see V3 Status Table.
 | invoiceNumber      | String    | user-specified and visible invoice id.
 | generationDate     | DatePicker| date invoice generated from object, null if it wasn't, YYYY-MM-DD if it was.
@@ -225,8 +227,8 @@ This endpoint allows to create single invoice.
 | address            | String    | First line of address on invoice.
 | depositAmount      | String    | amount required as deposit, null if none.
 | depositPercentage  | String    | percent of the invoice's value required as a deposit.
-| gmail              | String    | whether to send via ground mail.
-| showAttachments    | String    | whether attachments on invoice are rendered.
+| gmail              | Select    | whether to send via ground mail.
+| showAttachments    | Select    | whether attachments on invoice are rendered.
 | visState           | Select    | 0 for active, 1 for deleted.
 | street             | String    | street for address on invoice.
 | street2            | String    | second line of street for address on invoice.
@@ -239,7 +241,7 @@ This endpoint allows to create single invoice.
 | lname              | String    | Last name of client being invoiced.
 | vatName            | String    | Value Added Tax name if provided.
 | vatNumber          | String    | Value Added Tax number if provided.
-| dueOffsetDays      | String    | Number of days from creation that invoice is due.
+| dueOffsetDays      | Number    | Number of days from creation that invoice is due.
 
 ## FreshbooksAPI.getSingleInvoice
 This endpoint allows to retrive information about single invoice.
@@ -261,19 +263,19 @@ This endpoint allows to update single invoice.
 | invoiceId          | String    | The ID of the invoice.
 | customerId         | String    | The ID of the client.
 | createDate         | String    | The date of the invoice.
-| ownerId            | String    | id of creator of invoice. 1 if business admin, other if created by e.g. a contractor.
-| estimateId         | String    | id of associated estimate, 0 if none.
-| basecampId         | String    | id of connected basecamp account, 0 if none.
-| sentId             | String    | userid of user who sent the invoice, typically 1 for admin.
+| ownerId            | Number    | id of creator of invoice. 1 if business admin, other if created by e.g. a contractor.
+| estimateId         | Number    | id of associated estimate, 0 if none.
+| basecampId         | Number    | id of connected basecamp account, 0 if none.
+| sentId             | Number    | userid of user who sent the invoice, typically 1 for admin.
 | status             | String    | Invoice Status.
-| parent             | String    | id of object this invoice was generated from, 0 if none.
+| parent             | Number    | id of object this invoice was generated from, 0 if none.
 | displayStatus      | Select    | Description of status shown in FreshBooks UI, one of 'draft', 'created', 'sent', 'viewed', or 'outstanding'.
 | autobillStatus     | String    | one of retry, failed, or success.
 | paymentStatus      | Select    | description of payment status. One of 'unpaid', 'partial', 'paid', and 'auto-paid'. See the v3_status table on this page for descriptions of each.
 | lastOrderStatus    | String    | describes status of last attempted payment.
 | disputeStatus      | String    | description of whether invoice has been disputed.
 | depositStatus      | Select    | description of deposits applied to invoice. One of 'paid', 'unpaid', 'partial', 'none', and 'converted'.
-| autoBill           | String    | whether this invoice has a credit card saved.
+| autoBill           | Select    | whether this invoice has a credit card saved.
 | v3Status           | String    | description of Invoice Status, see V3 Status Table.
 | invoiceNumber      | String    | user-specified and visible invoice id.
 | generationDate     | DatePicker| date invoice generated from object, null if it wasn't, YYYY-MM-DD if it was.
@@ -287,8 +289,8 @@ This endpoint allows to update single invoice.
 | address            | String    | First line of address on invoice.
 | depositAmount      | String    | amount required as deposit, null if none.
 | depositPercentage  | String    | percent of the invoice's value required as a deposit.
-| gmail              | String    | whether to send via ground mail.
-| showAttachments    | String    | whether attachments on invoice are rendered.
+| gmail              | Select    | whether to send via ground mail.
+| showAttachments    | Select    | whether attachments on invoice are rendered.
 | visState           | Select    | 0 for active, 1 for deleted.
 | street             | String    | street for address on invoice.
 | street2            | String    | second line of street for address on invoice.
@@ -301,7 +303,7 @@ This endpoint allows to update single invoice.
 | lname              | String    | Last name of client being invoiced.
 | vatName            | String    | Value Added Tax name if provided.
 | vatNumber          | String    | Value Added Tax number if provided.
-| dueOffsetDays      | String    | Number of days from creation that invoice is due.
+| dueOffsetDays      | Number    | Number of days from creation that invoice is due.
 
 ## FreshbooksAPI.deleteSingleInvoice
 This endpoint allows to delete single invoice.
@@ -319,8 +321,8 @@ This endpoint allows to retrive information about items.
 |------------|-------|----------
 | accessToken| String| Access token obtained from getAccessToken method.
 | accountId  | String| The ID of the account.
-| page       | String| The ID of the retun page. Default 0.
-| perPage    | String| Number of results to return. Default 100.
+| page       | Number| The ID of the retun page. Default 0.
+| perPage    | Number| Number of results to return. Default 100.
 | search     | List  | Filter to search. Pattern: key=value,key=value,...
 
 ## FreshbooksAPI.createSingleItem
@@ -335,8 +337,8 @@ This endpoint allows to create new item.
 | inventory  | String| decimal-string count of inventory.
 | amount     | String| amount paid on invoice, to two decimal places.
 | code       | String| three-letter currency code.
-| tax1       | String| id of tax on invoice.
-| tax2       | String| id of second tax on invoice if applicable.
+| tax1       | Number| id of tax on invoice.
+| tax2       | Number| id of second tax on invoice if applicable.
 | visState   | Select| 0 for active, 1 for deleted.
 | description| String| descriptive text for item.
 
@@ -362,13 +364,13 @@ This endpoint allows to update item.
 | inventory  | String| decimal-string count of inventory.
 | amount     | String| amount paid on invoice, to two decimal places.
 | code       | String| three-letter currency code.
-| tax1       | String| id of tax on invoice.
-| tax2       | String| id of second tax on invoice if applicable.
+| tax1       | Number| id of tax on invoice.
+| tax2       | Number| id of second tax on invoice if applicable.
 | visState   | Select| 0 for active, 1 for deleted.
 | description| String| descriptive text for item.
 
 ## FreshbooksAPI.deleteSingleItem
-This endpoint allows to update item.
+This endpoint allows to delete item.
 
 | Field      | Type  | Description
 |------------|-------|----------
@@ -383,8 +385,8 @@ This endpoint allows to retrive information about payments.
 |------------|-------|----------
 | accessToken| String| Access token obtained from getAccessToken method.
 | accountId  | String| The ID of the account.
-| page       | String| The ID of the retun page. Default 0.
-| perPage    | String| Number of results to return. Default 100.
+| page       | Number| The ID of the retun page. Default 0.
+| perPage    | Number| Number of results to return. Default 100.
 | search     | List  | Filter to search. Pattern: key=value,key=value,...
 | include    | List  | Indicate which additional data will be include. Comma-separated. Example: category,project,...
 
@@ -395,18 +397,18 @@ This endpoint allows to create new payment.
 |--------------|-----------|----------
 | accessToken  | String    | Access token obtained from getAccessToken method.
 | accountId    | String    | The ID of the account.
-| invoiceId    | String    | id of related invoice.
+| invoiceId    | Number    | id of related invoice.
 | amount       | String    | amount paid on invoice, to two decimal places.
 | date         | DatePicker| date the payment was made, YYYY-MM-DD format.
 | type         | String    | "Check", "Credit", "Cash", etc.
-| creditId     | String    | id of related credit.
+| creditId     | Number    | id of related credit.
 | code         | String    | three-letter currency code.
 | clientId     | String    | id of client who made the payment.
 | visState     | Select    | 0 for active, 1 for deleted.
 | note         | String    | notes on payment, often used for credit card reference number.
-| overpaymentId| String    | id of related overpayment if relevant.
+| overpaymentId| Number    | id of related overpayment if relevant.
 | gateway      | String    | the payment processor used, if any.
-| fromCredit   | String    | whether or not the payment was converted from a Credit on a Client's account.
+| fromCredit   | Select    | whether or not the payment was converted from a Credit on a Client's account.
 
 ## FreshbooksAPI.getSinglePayment
 This endpoint allows to retrive information about single payment.
@@ -425,19 +427,19 @@ This endpoint allows to update payment.
 |--------------|-----------|----------
 | accessToken  | String    | Access token obtained from getAccessToken method.
 | accountId    | String    | The ID of the account.
-| invoiceId    | String    | id of related invoice.
+| invoiceId    | Number    | id of related invoice.
 | paymentId    | String    | The ID of the payment.
 | amount       | String    | amount paid on invoice, to two decimal places.
 | date         | DatePicker| date the payment was made, YYYY-MM-DD format.
 | type         | String    | "Check", "Credit", "Cash", etc.
-| creditId     | String    | id of related credit.
+| creditId     | Number    | id of related credit.
 | code         | String    | three-letter currency code.
 | clientId     | String    | id of client who made the payment.
 | visState     | Select    | 0 for active, 1 for deleted.
 | note         | String    | notes on payment, often used for credit card reference number.
-| overpaymentId| String    | id of related overpayment if relevant.
+| overpaymentId| Number    | id of related overpayment if relevant.
 | gateway      | String    | the payment processor used, if any.
-| fromCredit   | String    | whether or not the payment was converted from a Credit on a Client's account.
+| fromCredit   | Select    | whether or not the payment was converted from a Credit on a Client's account.
 
 ## FreshbooksAPI.deleteSinglePayment
 This endpoint allows to delete payment.
@@ -464,8 +466,8 @@ This endpoint allows to retrive information about taxes.
 |------------|-------|----------
 | accessToken| String| Access token obtained from getAccessToken method.
 | accountId  | String| The ID of the account.
-| page       | String| The ID of the retun page. Default 0.
-| perPage    | String| Number of results to return. Default 100.
+| page       | Number| The ID of the retun page. Default 0.
+| perPage    | Number| Number of results to return. Default 100.
 | search     | List  | Filter to search. Pattern: key=value,key=value,...
 
 ## FreshbooksAPI.createSingleTax
@@ -478,16 +480,16 @@ This endpoint allows to create new tax.
 | name       | String| The name of the new tax.
 | number     | String| an external number that identifies your tax submission.
 | amount     | String| string-decimal representing percentage value of tax.
-| compound   | String| compound taxes are calculated on top of primary taxes. True || false
+| compound   | Select| compound taxes are calculated on top of primary taxes. True || false
 
 ## FreshbooksAPI.getSingleTax
-This endpoint allows to create new tax.
+This endpoint allows to retrieve existing tax.
 
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Access token obtained from getAccessToken method.
 | accountId  | String| The ID of the account.
-| taxId      | String| The ID of the tax.
+| taxId      | Number| The ID of the tax.
 
 ## FreshbooksAPI.updateSingleTax
 This endpoint allows to update existing tax.
@@ -496,11 +498,11 @@ This endpoint allows to update existing tax.
 |------------|-------|----------
 | accessToken| String| Access token obtained from getAccessToken method.
 | accountId  | String| The ID of the account.
-| taxId      | String| The ID of the tax.
+| taxId      | Number| The ID of the tax.
 | name       | String| The name of the new tax.
 | number     | String| an external number that identifies your tax submission.
 | amount     | String| string-decimal representing percentage value of tax.
-| compound   | String| compound taxes are calculated on top of primary taxes. True || false
+| compound   | Select| compound taxes are calculated on top of primary taxes. True || false
 
 ## FreshbooksAPI.deleteSingleTax
 This endpoint allows to delete existing tax.
@@ -509,7 +511,7 @@ This endpoint allows to delete existing tax.
 |------------|-------|----------
 | accessToken| String| Access token obtained from getAccessToken method.
 | accountId  | String| The ID of the account.
-| taxId      | String| The ID of the tax.
+| taxId      | Number| The ID of the tax.
 
 ## FreshbooksAPI.getClients
 This endpoint allows to retrive information about clients.
@@ -518,8 +520,8 @@ This endpoint allows to retrive information about clients.
 |------------|-------|----------
 | accessToken| String| Access token obtained from getAccessToken method.
 | accountId  | String| The ID of the account.
-| page       | String| The ID of the retun page. Default 0.
-| perPage    | String| Number of results to return. Default 100.
+| page       | Number| The ID of the retun page. Default 0.
+| perPage    | Number| Number of results to return. Default 100.
 | search     | String| Filter to search. Pattern: key=value,key=value,...
 | include    | List  | Indicate which additional data will be include. Comma-separated. Example: category,project,...
 
@@ -549,8 +551,8 @@ This endpoint allows to create new client.
 | billingProvince | String| billing province.
 | billingStreet   | String| billing street address.
 | billingStreet2  | String| billing street address second part.
-| prefEmail       | String| prefers email over ground mail. true || false
-| prefGmail       | String| prefers ground mail over email. true || false
+| prefEmail       | Select| prefers email over ground mail. true || false
+| prefGmail       | Select| prefers ground mail over email. true || false
 | shippingCity    | String| shipping address city.
 | shippingCode    | String| shipping postal code.
 | shippingCountry | String| shipping country.
@@ -568,7 +570,7 @@ This endpoint allows to retrive information about single client.
 |------------|-------|----------
 | accessToken| String| Access token obtained from getAccessToken method.
 | accountId  | String| The ID of the account.
-| id         | String| Unique to this business id for client.
+| id         | Number| Unique to this business id for client.
 | include    | List  | Indicate which additional data will be include. Comma-separated. Example: category,project,...
 
 ## FreshbooksAPI.updateSingleClient
@@ -578,7 +580,7 @@ This endpoint allows to update client.
 |-----------------|-------|----------
 | accessToken     | String| Access token obtained from getAccessToken method.
 | accountId       | String| The ID of the account.
-| id              | String| Unique to this business id for client.
+| id              | Number| Unique to this business id for client.
 | busPhone        | String| business phone number.
 | companyIndustry | String| description of industry client is in.
 | companySize     | String| size of client's company.
@@ -598,8 +600,8 @@ This endpoint allows to update client.
 | billingProvince | String| billing province.
 | billingStreet   | String| billing street address.
 | billingStreet2  | String| billing street address second part.
-| prefEmail       | String| prefers email over ground mail. true || false
-| prefGmail       | String| prefers ground mail over email. true || false
+| prefEmail       | Select| prefers email over ground mail. true || false
+| prefGmail       | Select| prefers ground mail over email. true || false
 | shippingCity    | String| shipping address city.
 | shippingCode    | String| shipping postal code.
 | shippingCountry | String| shipping country.
@@ -607,7 +609,7 @@ This endpoint allows to update client.
 | shippingStreet  | String| shipping street address.
 | shippingStreet2 | String| shipping address second street info.
 | vatName         | String| Value Added Tax name.
-| vatNumber       | String| Value Added Tax number.
+| vatNumber       | Number| Value Added Tax number.
 | visState        | Select| "visibility state", active, deleted, or archived.
 
 ## FreshbooksAPI.deleteSingleClient
@@ -617,7 +619,7 @@ This endpoint allows to delete client.
 |------------|-------|----------
 | accessToken| String| Access token obtained from getAccessToken method.
 | accountId  | String| The ID of the account.
-| id         | String| Unique to this business id for client.
+| id         | Number| Unique to this business id for client.
 
 ## FreshbooksAPI.getStaffs
 This endpoint allows to retrive information about staffs.

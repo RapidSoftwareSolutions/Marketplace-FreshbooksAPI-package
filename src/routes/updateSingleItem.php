@@ -74,7 +74,7 @@ $app->post('/api/FreshbooksAPI/updateSingleItem', function ($request, $response,
     if(!empty($post_data['args']['tax2'])) {
         $body['item']['tax2'] = $post_data['args']['tax2'];
     }
-    if(!empty($post_data['args']['visState'])) {
+    if(isset($post_data['args']['visState']) && strlen($post_data['args']['visState']) > 0) {
         $body['item']['vis_State'] = $post_data['args']['visState'];
     }
     if(!empty($post_data['args']['description'])) {

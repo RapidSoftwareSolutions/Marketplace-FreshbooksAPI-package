@@ -19,7 +19,7 @@
     "taxes"
   ],
   "accounts": {
-    "domain": "freshbooks.com",
+    "domain": "https://freshbooks.com",
     "credentials": [
       "clientId",
       "clientSecret"
@@ -206,13 +206,13 @@
         },
         {
           "name": "staffId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related staff member if applicable.",
           "required": true
         },
         {
           "name": "categoryId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related expense category.",
           "required": true
         },
@@ -224,13 +224,13 @@
         },
         {
           "name": "projectId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related project if applicable.",
           "required": false
         },
         {
           "name": "clientId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related client if applicable.",
           "required": false
         },
@@ -260,13 +260,17 @@
         },
         {
           "name": "isDuplicate",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "true\/false is duplicated expense.",
           "required": false
         },
         {
           "name": "profileId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related profile if applicable.",
           "required": false
         },
@@ -278,13 +282,13 @@
         },
         {
           "name": "transactionId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related transaction if applicable.",
           "required": false
         },
         {
           "name": "invoiceId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related invoice if applicable.",
           "required": false
         },
@@ -315,14 +319,22 @@
         {
           "name": "visState",
           "type": "Select",
-          "options": ["0", "1"],
+          "options": [
+            "0",
+            "1"
+          ],
           "info": "0 for active, 1 for deleted.",
           "required": false
         },
         {
           "name": "status",
           "type": "Select",
-          "options":["0", "1", "2", "3", "4"],
+          "options": [
+            "0",
+            "1",
+            "2",
+            "4"
+          ],
           "info": "values from expense status table. 0 - internal (-internal- rather than client); 1 - outstanding (has client, needs to be applied to an invoice); 2 - invoiced (has client, attached to an invoice); 4 - recouped (has client, attached to an invoice, and paid).",
           "required": false
         },
@@ -340,13 +352,17 @@
         },
         {
           "name": "extSystemId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related contractor system if applicable.",
           "required": false
         },
         {
           "name": "hasReceipt",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "true\/false has receipt attached.",
           "required": false
         },
@@ -358,7 +374,7 @@
         },
         {
           "name": "extInvoiceId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related contractor invoice if applicable.",
           "required": false
         },
@@ -370,7 +386,11 @@
         },
         {
           "name": "compoundedTax",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "true\/false tax2 was a compound tax.",
           "required": false
         }
@@ -405,13 +425,13 @@
         },
         {
           "name": "page",
-          "type": "String",
+          "type": "Number",
           "info": "The ID of the retun page. Default 0.",
           "required": false
         },
         {
           "name": "perPage",
-          "type": "String",
+          "type": "Number",
           "info": "Number of results to return. Default 100.",
           "required": false
         },
@@ -462,13 +482,13 @@
         },
         {
           "name": "accountId",
-          "type": "String",
+          "type": "Number",
           "info": "The ID of the account.",
           "required": true
         },
         {
           "name": "expenseId",
-          "type": "String",
+          "type": "Number",
           "info": "The ID of the expense.",
           "required": true
         },
@@ -486,13 +506,13 @@
         },
         {
           "name": "staffId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related staff member if applicable.",
           "required": false
         },
         {
           "name": "categoryId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related expense category.",
           "required": false
         },
@@ -504,13 +524,13 @@
         },
         {
           "name": "projectId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related project if applicable.",
           "required": false
         },
         {
           "name": "clientId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related client if applicable.",
           "required": false
         },
@@ -540,13 +560,17 @@
         },
         {
           "name": "isDuplicate",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "true\/false is duplicated expense.",
           "required": false
         },
         {
           "name": "profileId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related profile if applicable.",
           "required": false
         },
@@ -558,13 +582,13 @@
         },
         {
           "name": "transactionId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related transaction if applicable.",
           "required": false
         },
         {
           "name": "invoiceId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related invoice if applicable.",
           "required": false
         },
@@ -595,14 +619,22 @@
         {
           "name": "visState",
           "type": "Select",
-          "options": ["0", "1"],
+          "options": [
+            "0",
+            "1"
+          ],
           "info": "0 for active, 1 for deleted.",
           "required": false
         },
         {
           "name": "status",
           "type": "Select",
-          "options":["0", "1", "2", "3", "4"],
+          "options": [
+            "0",
+            "1",
+            "2",
+            "4"
+          ],
           "info": "values from expense status table. 0 - internal (-internal- rather than client); 1 - outstanding (has client, needs to be applied to an invoice); 2 - invoiced (has client, attached to an invoice); 4 - recouped (has client, attached to an invoice, and paid).",
           "required": false
         },
@@ -620,13 +652,17 @@
         },
         {
           "name": "extSystemId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related contractor system if applicable.",
           "required": false
         },
         {
           "name": "hasReceipt",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "true\/false has receipt attached.",
           "required": false
         },
@@ -638,7 +674,7 @@
         },
         {
           "name": "extInvoiceId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related contractor invoice if applicable.",
           "required": false
         },
@@ -650,7 +686,11 @@
         },
         {
           "name": "compoundedTax",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "true\/false tax2 was a compound tax.",
           "required": false
         }
@@ -720,13 +760,13 @@
         },
         {
           "name": "page",
-          "type": "String",
+          "type": "Number",
           "info": "The ID of the retun page. Default 0.",
           "required": false
         },
         {
           "name": "perPage",
-          "type": "String",
+          "type": "Number",
           "info": "Number of results to return. Default 100.",
           "required": false
         },
@@ -829,13 +869,13 @@
         },
         {
           "name": "page",
-          "type": "String",
+          "type": "Number",
           "info": "The ID of the retun page. Default 0.",
           "required": false
         },
         {
           "name": "perPage",
-          "type": "String",
+          "type": "Number",
           "info": "Number of results to return. Default 100.",
           "required": false
         },
@@ -856,11 +896,10 @@
           "info": "Indicate which additional data will be include. Comma-separated. Example: category,project,...",
           "required": false,
           "structure": {
-          "name": "data",
-          "type": "String",
-          "info": "Single data to include"
-        }
-
+            "name": "data",
+            "type": "String",
+            "info": "Single data to include"
+          }
         }
       ],
       "callbacks": [
@@ -905,25 +944,25 @@
         },
         {
           "name": "ownerId",
-          "type": "String",
+          "type": "Number",
           "info": "id of creator of invoice. 1 if business admin, other if created by e.g. a contractor.",
           "required": false
         },
         {
           "name": "estimateId",
-          "type": "String",
+          "type": "Number",
           "info": "id of associated estimate, 0 if none.",
           "required": false
         },
         {
           "name": "basecampId",
-          "type": "String",
+          "type": "Number",
           "info": "id of connected basecamp account, 0 if none.",
           "required": false
         },
         {
           "name": "sentId",
-          "type": "String",
+          "type": "Number",
           "info": "userid of user who sent the invoice, typically 1 for admin.",
           "required": false
         },
@@ -935,14 +974,20 @@
         },
         {
           "name": "parent",
-          "type": "String",
+          "type": "Number",
           "info": "id of object this invoice was generated from, 0 if none.",
           "required": false
         },
         {
           "name": "displayStatus",
           "type": "Select",
-          "options": ["draft", "created", "seny", "viewed", "outstanding"],
+          "options": [
+            "draft",
+            "created",
+            "seny",
+            "viewed",
+            "outstanding"
+          ],
           "info": "Description of status shown in FreshBooks UI, one of 'draft', 'created', 'sent', 'viewed', or 'outstanding'.",
           "required": false
         },
@@ -955,7 +1000,12 @@
         {
           "name": "paymentStatus",
           "type": "Select",
-          "options": ["unpaid", "partial", "paid", "auto-paid"],
+          "options": [
+            "unpaid",
+            "partial",
+            "paid",
+            "auto-paid"
+          ],
           "info": "description of payment status. One of 'unpaid', 'partial', 'paid', and 'auto-paid'. See the v3_status table on this page for descriptions of each.",
           "required": false
         },
@@ -974,13 +1024,23 @@
         {
           "name": "depositStatus",
           "type": "Select",
-          "options": ["unpaid", "partial", "paid", "none", "converted"],
+          "options": [
+            "unpaid",
+            "partial",
+            "paid",
+            "none",
+            "converted"
+          ],
           "info": "description of deposits applied to invoice. One of 'paid', 'unpaid', 'partial', 'none', and 'converted'.",
           "required": false
         },
         {
           "name": "autoBill",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "whether this invoice has a credit card saved.",
           "required": false
         },
@@ -1064,20 +1124,31 @@
         },
         {
           "name": "gmail",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "whether to send via ground mail.",
           "required": false
         },
         {
           "name": "showAttachments",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "whether attachments on invoice are rendered.",
           "required": false
         },
         {
           "name": "visState",
           "type": "Select",
-          "options": ["0", "1"],
+          "options": [
+            "0",
+            "1"
+          ],
           "info": "0 for active, 1 for deleted.",
           "required": false
         },
@@ -1149,7 +1220,7 @@
         },
         {
           "name": "dueOffsetDays",
-          "type": "String",
+          "type": "Number",
           "info": "Number of days from creation that invoice is due.",
           "required": false
         }
@@ -1248,25 +1319,25 @@
         },
         {
           "name": "ownerId",
-          "type": "String",
+          "type": "Number",
           "info": "id of creator of invoice. 1 if business admin, other if created by e.g. a contractor.",
           "required": false
         },
         {
           "name": "estimateId",
-          "type": "String",
+          "type": "Number",
           "info": "id of associated estimate, 0 if none.",
           "required": false
         },
         {
           "name": "basecampId",
-          "type": "String",
+          "type": "Number",
           "info": "id of connected basecamp account, 0 if none.",
           "required": false
         },
         {
           "name": "sentId",
-          "type": "String",
+          "type": "Number",
           "info": "userid of user who sent the invoice, typically 1 for admin.",
           "required": false
         },
@@ -1278,14 +1349,20 @@
         },
         {
           "name": "parent",
-          "type": "String",
+          "type": "Number",
           "info": "id of object this invoice was generated from, 0 if none.",
           "required": false
         },
         {
           "name": "displayStatus",
           "type": "Select",
-          "options": ["unpaid", "partial", "paid", "none", "converted"],
+          "options": [
+            "draft",
+            "created",
+            "sent",
+            "viewed",
+            "outstanding"
+          ],
           "info": "Description of status shown in FreshBooks UI, one of 'draft', 'created', 'sent', 'viewed', or 'outstanding'.",
           "required": false
         },
@@ -1298,7 +1375,12 @@
         {
           "name": "paymentStatus",
           "type": "Select",
-          "options": ["unpaid", "partial", "paid", "auto-paid"],
+          "options": [
+            "unpaid",
+            "partial",
+            "paid",
+            "auto-paid"
+          ],
           "info": "description of payment status. One of 'unpaid', 'partial', 'paid', and 'auto-paid'. See the v3_status table on this page for descriptions of each.",
           "required": false
         },
@@ -1317,13 +1399,23 @@
         {
           "name": "depositStatus",
           "type": "Select",
-          "options": ["unpaid", "partial", "paid", "none", "converted"],
+          "options": [
+            "unpaid",
+            "partial",
+            "paid",
+            "none",
+            "converted"
+          ],
           "info": "description of deposits applied to invoice. One of 'paid', 'unpaid', 'partial', 'none', and 'converted'.",
           "required": false
         },
         {
           "name": "autoBill",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "whether this invoice has a credit card saved.",
           "required": false
         },
@@ -1407,20 +1499,31 @@
         },
         {
           "name": "gmail",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "whether to send via ground mail.",
           "required": false
         },
         {
           "name": "showAttachments",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "whether attachments on invoice are rendered.",
           "required": false
         },
         {
           "name": "visState",
           "type": "Select",
-          "options": ["0", "1"],
+          "options": [
+            "0",
+            "1"
+          ],
           "info": "0 for active, 1 for deleted.",
           "required": false
         },
@@ -1492,7 +1595,7 @@
         },
         {
           "name": "dueOffsetDays",
-          "type": "String",
+          "type": "Number",
           "info": "Number of days from creation that invoice is due.",
           "required": false
         }
@@ -1562,13 +1665,13 @@
         },
         {
           "name": "page",
-          "type": "String",
+          "type": "Number",
           "info": "The ID of the retun page. Default 0.",
           "required": false
         },
         {
           "name": "perPage",
-          "type": "String",
+          "type": "Number",
           "info": "Number of results to return. Default 100.",
           "required": false
         },
@@ -1644,20 +1747,23 @@
         },
         {
           "name": "tax1",
-          "type": "String",
+          "type": "Number",
           "info": "id of tax on invoice.",
           "required": false
         },
         {
           "name": "tax2",
-          "type": "String",
+          "type": "Number",
           "info": "id of second tax on invoice if applicable.",
           "required": false
         },
         {
           "name": "visState",
           "type": "Select",
-          "options": ["0", "1"],
+          "options": [
+            "0",
+            "1"
+          ],
           "info": "0 for active, 1 for deleted.",
           "required": false
         },
@@ -1769,20 +1875,23 @@
         },
         {
           "name": "tax1",
-          "type": "String",
+          "type": "Number",
           "info": "id of tax on invoice.",
           "required": false
         },
         {
           "name": "tax2",
-          "type": "String",
+          "type": "Number",
           "info": "id of second tax on invoice if applicable.",
           "required": false
         },
         {
           "name": "visState",
           "type": "Select",
-          "options": ["0", "1"],
+          "options": [
+            "0",
+            "1"
+          ],
           "info": "0 for active, 1 for deleted.",
           "required": false
         },
@@ -1806,7 +1915,7 @@
     },
     {
       "name": "deleteSingleItem",
-      "description": "This endpoint allows to update item.",
+      "description": "This endpoint allows to delete item.",
       "args": [
         {
           "name": "accessToken",
@@ -1858,13 +1967,13 @@
         },
         {
           "name": "page",
-          "type": "String",
+          "type": "Number",
           "info": "The ID of the retun page. Default 0.",
           "required": false
         },
         {
           "name": "perPage",
-          "type": "String",
+          "type": "Number",
           "info": "Number of results to return. Default 100.",
           "required": false
         },
@@ -1921,7 +2030,7 @@
         },
         {
           "name": "invoiceId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related invoice.",
           "required": true
         },
@@ -1945,7 +2054,7 @@
         },
         {
           "name": "creditId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related credit.",
           "required": false
         },
@@ -1964,7 +2073,10 @@
         {
           "name": "visState",
           "type": "Select",
-          "options": ["0", "1"],
+          "options": [
+            "0",
+            "1"
+          ],
           "info": "0 for active, 1 for deleted.",
           "required": false
         },
@@ -1976,7 +2088,7 @@
         },
         {
           "name": "overpaymentId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related overpayment if relevant.",
           "required": false
         },
@@ -1988,7 +2100,11 @@
         },
         {
           "name": "fromCredit",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "whether or not the payment was converted from a Credit on a Client's account.",
           "required": false
         }
@@ -2069,7 +2185,7 @@
         },
         {
           "name": "invoiceId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related invoice.",
           "required": true
         },
@@ -2099,7 +2215,7 @@
         },
         {
           "name": "creditId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related credit.",
           "required": false
         },
@@ -2118,7 +2234,10 @@
         {
           "name": "visState",
           "type": "Select",
-          "options": ["0", "1"],
+          "options": [
+            "0",
+            "1"
+          ],
           "info": "0 for active, 1 for deleted.",
           "required": false
         },
@@ -2130,7 +2249,7 @@
         },
         {
           "name": "overpaymentId",
-          "type": "String",
+          "type": "Number",
           "info": "id of related overpayment if relevant.",
           "required": false
         },
@@ -2142,7 +2261,11 @@
         },
         {
           "name": "fromCredit",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "whether or not the payment was converted from a Credit on a Client's account.",
           "required": false
         }
@@ -2247,13 +2370,13 @@
         },
         {
           "name": "page",
-          "type": "String",
+          "type": "Number",
           "info": "The ID of the retun page. Default 0.",
           "required": false
         },
         {
           "name": "perPage",
-          "type": "String",
+          "type": "Number",
           "info": "Number of results to return. Default 100.",
           "required": false
         },
@@ -2317,7 +2440,11 @@
         },
         {
           "name": "compound",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "compound taxes are calculated on top of primary taxes. True || false",
           "required": false
         }
@@ -2335,7 +2462,7 @@
     },
     {
       "name": "getSingleTax",
-      "description": "This endpoint allows to create new tax.",
+      "description": "This endpoint allows to retrieve existing tax.",
       "args": [
         {
           "name": "accessToken",
@@ -2352,7 +2479,7 @@
         },
         {
           "name": "taxId",
-          "type": "String",
+          "type": "Number",
           "info": "The ID of the tax.",
           "required": true
         }
@@ -2387,7 +2514,7 @@
         },
         {
           "name": "taxId",
-          "type": "String",
+          "type": "Number",
           "info": "The ID of the tax.",
           "required": true
         },
@@ -2411,7 +2538,11 @@
         },
         {
           "name": "compound",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "compound taxes are calculated on top of primary taxes. True || false",
           "required": false
         }
@@ -2446,7 +2577,7 @@
         },
         {
           "name": "taxId",
-          "type": "String",
+          "type": "Number",
           "info": "The ID of the tax.",
           "required": true
         }
@@ -2481,13 +2612,13 @@
         },
         {
           "name": "page",
-          "type": "String",
+          "type": "Number",
           "info": "The ID of the retun page. Default 0.",
           "required": false
         },
         {
           "name": "perPage",
-          "type": "String",
+          "type": "Number",
           "info": "Number of results to return. Default 100.",
           "required": false
         },
@@ -2658,13 +2789,21 @@
         },
         {
           "name": "prefEmail",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "prefers email over ground mail. true || false",
           "required": false
         },
         {
           "name": "prefGmail",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "prefers ground mail over email. true || false",
           "required": false
         },
@@ -2753,7 +2892,7 @@
         },
         {
           "name": "id",
-          "type": "String",
+          "type": "Number",
           "info": "Unique to this business id for client.",
           "required": true
         },
@@ -2799,7 +2938,7 @@
         },
         {
           "name": "id",
-          "type": "String",
+          "type": "Number",
           "info": "Unique to this business id for client.",
           "required": true
         },
@@ -2919,13 +3058,21 @@
         },
         {
           "name": "prefEmail",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "prefers email over ground mail. true || false",
           "required": false
         },
         {
           "name": "prefGmail",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "prefers ground mail over email. true || false",
           "required": false
         },
@@ -2973,14 +3120,18 @@
         },
         {
           "name": "vatNumber",
-          "type": "String",
+          "type": "Number",
           "info": "Value Added Tax number.",
           "required": false
         },
         {
           "name": "visState",
           "type": "Select",
-          "options": ["active", "deleted", "archived"],
+          "options": [
+            0,
+            1,
+            2
+          ],
           "info": "\"visibility state\", active, deleted, or archived.",
           "required": false
         }
@@ -3015,7 +3166,7 @@
         },
         {
           "name": "id",
-          "type": "String",
+          "type": "Number",
           "info": "Unique to this business id for client.",
           "required": true
         }
@@ -3250,7 +3401,11 @@
         {
           "name": "visState",
           "type": "Select",
-          "options": ["active", "deleted", "archived"],
+          "options": [
+            0,
+            1,
+            2
+          ],
           "info": "\"visibility state\", active, deleted, or archived.",
           "required": false
         },
