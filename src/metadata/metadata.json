@@ -232,7 +232,7 @@
           "name": "clientId",
           "type": "Number",
           "info": "id of related client if applicable.",
-          "required": false
+          "required": true
         },
         {
           "name": "taxPercent1",
@@ -482,7 +482,7 @@
         },
         {
           "name": "accountId",
-          "type": "Number",
+          "type": "String",
           "info": "The ID of the account.",
           "required": true
         },
@@ -1313,7 +1313,7 @@
         },
         {
           "name": "createDate",
-          "type": "String",
+          "type": "DatePicker",
           "info": "The date of the invoice.",
           "required": false
         },

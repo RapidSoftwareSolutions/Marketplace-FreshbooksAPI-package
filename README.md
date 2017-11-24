@@ -2,7 +2,7 @@
 
 # FreshbooksAPI Package
 Manage invoices, taxes and expenses programmatically.
-* Domain: [FreshbooksAPI](http://https://freshbooks.com)
+* Domain: [FreshbooksAPI](https://freshbooks.com)
 * Credentials: clientId, clientSecret
 
 ## How to get credentials: 
