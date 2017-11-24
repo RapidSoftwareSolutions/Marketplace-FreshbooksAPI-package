@@ -1122,16 +1122,7 @@
           "info": "percent of the invoice's value required as a deposit.",
           "required": false
         },
-        {
-          "name": "gmail",
-          "type": "Select",
-          "options": [
-            "true",
-            "false"
-          ],
-          "info": "whether to send via ground mail.",
-          "required": false
-        },
+
         {
           "name": "showAttachments",
           "type": "Select",
@@ -1497,16 +1488,7 @@
           "info": "percent of the invoice's value required as a deposit.",
           "required": false
         },
-        {
-          "name": "gmail",
-          "type": "Select",
-          "options": [
-            "true",
-            "false"
-          ],
-          "info": "whether to send via ground mail.",
-          "required": false
-        },
+        
         {
           "name": "showAttachments",
           "type": "Select",

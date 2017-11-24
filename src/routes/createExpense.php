@@ -88,8 +88,8 @@ $app->post('/api/FreshbooksAPI/createExpense', function ($request, $response, $a
     if (!empty($post_data['args']['taxName2'])) {
         $body['expense']['taxName2'] = $post_data['args']['taxName2'];
     }
-    if (isset($post_data['args']['isDuplicate']) && strlen($post_data['args']['isDuplicate']) > 0) {
-        $body['expense']['isduplicate'] = $post_data['args']['isDuplicate'];
+    if (isset($post_data['args']['isDuplicate'])) {
+        $body['expense']['isduplicate'] = $post_data['args']['isDuplicate'] == "true" ? true : false;
     }
     if (!empty($post_data['args']['profileId'])) {
         $body['expense']['profileid'] = $post_data['args']['profileId'];
@@ -130,8 +130,8 @@ $app->post('/api/FreshbooksAPI/createExpense', function ($request, $response, $a
     if (!empty($post_data['args']['extSystemId'])) {
         $body['expense']['ext_systemid'] = $post_data['args']['extSystemId'];
     }
-    if (isset($post_data['args']['hasReceipt']) && strlen($post_data['args']['isDuplicate']) > 0) {
-        $body['expense']['has_receipt'] = $post_data['args']['hasReceipt'];
+    if (isset($post_data['args']['hasReceipt']) && strlen($post_data['args']['hasReceipt']) > 0) {
+        $body['expense']['has_receipt'] = $post_data['args']['hasReceipt'] == "true" ? true : false;
     }
     if (!empty($post_data['args']['notes'])) {
         $body['expense']['notes'] = $post_data['args']['notes'];
@@ -145,9 +145,7 @@ $app->post('/api/FreshbooksAPI/createExpense', function ($request, $response, $a
     if (!empty($post_data['args']['compoundedTax'])) {
         $body['expense']['compounded_tax'] = $post_data['args']['compoundedTax'];
     }
-
     $client = $this->httpClient;
-
     try {
 
         $resp = $client->post($query_str,
