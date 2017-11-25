@@ -258,16 +258,7 @@
           "info": "name of second tax.",
           "required": false
         },
-        {
-          "name": "isDuplicate",
-          "type": "Select",
-          "options": [
-            "true",
-            "false"
-          ],
-          "info": "true\/false is duplicated expense.",
-          "required": false
-        },
+
         {
           "name": "profileId",
           "type": "Number",
@@ -286,12 +277,7 @@
           "info": "id of related transaction if applicable.",
           "required": false
         },
-        {
-          "name": "invoiceId",
-          "type": "Number",
-          "info": "id of related invoice if applicable.",
-          "required": false
-        },
+
         {
           "name": "taxAmount1",
           "type": "String",
@@ -356,16 +342,7 @@
           "info": "id of related contractor system if applicable.",
           "required": false
         },
-        {
-          "name": "hasReceipt",
-          "type": "Select",
-          "options": [
-            "true",
-            "false"
-          ],
-          "info": "true\/false has receipt attached.",
-          "required": false
-        },
+
         {
           "name": "notes",
           "type": "String",
@@ -960,12 +937,7 @@
           "info": "id of connected basecamp account, 0 if none.",
           "required": false
         },
-        {
-          "name": "sentId",
-          "type": "Number",
-          "info": "userid of user who sent the invoice, typically 1 for admin.",
-          "required": false
-        },
+
         {
           "name": "status",
           "type": "String",
@@ -1326,12 +1298,7 @@
           "info": "id of connected basecamp account, 0 if none.",
           "required": false
         },
-        {
-          "name": "sentId",
-          "type": "Number",
-          "info": "userid of user who sent the invoice, typically 1 for admin.",
-          "required": false
-        },
+
         {
           "name": "status",
           "type": "String",
@@ -1344,19 +1311,7 @@
           "info": "id of object this invoice was generated from, 0 if none.",
           "required": false
         },
-        {
-          "name": "displayStatus",
-          "type": "Select",
-          "options": [
-            "draft",
-            "created",
-            "sent",
-            "viewed",
-            "outstanding"
-          ],
-          "info": "Description of status shown in FreshBooks UI, one of 'draft', 'created', 'sent', 'viewed', or 'outstanding'.",
-          "required": false
-        },
+
         {
           "name": "autobillStatus",
           "type": "String",
@@ -1488,7 +1443,7 @@
           "info": "percent of the invoice's value required as a deposit.",
           "required": false
         },
-        
+
         {
           "name": "showAttachments",
           "type": "Select",

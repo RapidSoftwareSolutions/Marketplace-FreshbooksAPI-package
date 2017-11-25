@@ -2,7 +2,7 @@
 
 # FreshbooksAPI Package
 Manage invoices, taxes and expenses programmatically.
-* Domain: [FreshbooksAPI](https://freshbooks.com)
+* Domain: [FreshbooksAPI](http://https://freshbooks.com)
 * Credentials: clientId, clientSecret
 
 ## How to get credentials: 
@@ -10,7 +10,6 @@ Manage invoices, taxes and expenses programmatically.
 1. Go to [Developer section](https://my.freshbooks.com/#/developer)
 2. Create an App
 3. After creating app you will see Client ID and Client
-
 
 
 ## Custom datatypes: 
@@ -78,11 +77,9 @@ The endpoint allows to create new expense.
 | taxName1     | String    | name of first tax.
 | taxPercent2  | String    | string-decimal tax amount for second tax.
 | taxName2     | String    | name of second tax.
-| isDuplicate  | Select    | true/false is duplicated expense.
 | profileId    | Number    | id of related profile if applicable.
 | accountName  | String    | name of related account if applicable.
 | transactionId| Number    | id of related transaction if applicable.
-| invoiceId    | Number    | id of related invoice if applicable.
 | taxAmount1   | String    | amount for first tax.
 | taxCode1     | String    | 3-letter currency code for first tax.
 | taxAmount2   | String    | amount for second tax.
@@ -92,7 +89,6 @@ The endpoint allows to create new expense.
 | bankName     | String    | name of bank expense was imported from, if applicable.
 | vendor       | String    | name of vendor.
 | extSystemId  | Number    | id of related contractor system if applicable.
-| hasReceipt   | Select    | true/false has receipt attached.
 | notes        | String    | notes about expense.
 | extInvoiceId | Number    | id of related contractor invoice if applicable.
 | amountCode   | String    | 3-letter currency code.
@@ -116,7 +112,7 @@ The endpoint allows to update existing expenses.
 | Field        | Type      | Description
 |--------------|-----------|----------
 | accessToken  | String    | Access token obtained from getAccessToken method.
-| accountId    | Number    | The ID of the account.
+| accountId    | String    | The ID of the account.
 | expenseId    | Number    | The ID of the expense.
 | amount       | String    | The amount of the expense.
 | date         | DatePicker| The date of the expense.
@@ -204,7 +200,6 @@ This endpoint allows to create single invoice.
 | ownerId            | Number    | id of creator of invoice. 1 if business admin, other if created by e.g. a contractor.
 | estimateId         | Number    | id of associated estimate, 0 if none.
 | basecampId         | Number    | id of connected basecamp account, 0 if none.
-| sentId             | Number    | userid of user who sent the invoice, typically 1 for admin.
 | status             | String    | Invoice Status.
 | parent             | Number    | id of object this invoice was generated from, 0 if none.
 | displayStatus      | Select    | Description of status shown in FreshBooks UI, one of 'draft', 'created', 'sent', 'viewed', or 'outstanding'.
@@ -227,7 +222,6 @@ This endpoint allows to create single invoice.
 | address            | String    | First line of address on invoice.
 | depositAmount      | String    | amount required as deposit, null if none.
 | depositPercentage  | String    | percent of the invoice's value required as a deposit.
-| gmail              | Select    | whether to send via ground mail.
 | showAttachments    | Select    | whether attachments on invoice are rendered.
 | visState           | Select    | 0 for active, 1 for deleted.
 | street             | String    | street for address on invoice.
@@ -262,14 +256,12 @@ This endpoint allows to update single invoice.
 | accountId          | String    | The ID of the account.
 | invoiceId          | String    | The ID of the invoice.
 | customerId         | String    | The ID of the client.
-| createDate         | String    | The date of the invoice.
+| createDate         | DatePicker| The date of the invoice.
 | ownerId            | Number    | id of creator of invoice. 1 if business admin, other if created by e.g. a contractor.
 | estimateId         | Number    | id of associated estimate, 0 if none.
 | basecampId         | Number    | id of connected basecamp account, 0 if none.
-| sentId             | Number    | userid of user who sent the invoice, typically 1 for admin.
 | status             | String    | Invoice Status.
 | parent             | Number    | id of object this invoice was generated from, 0 if none.
-| displayStatus      | Select    | Description of status shown in FreshBooks UI, one of 'draft', 'created', 'sent', 'viewed', or 'outstanding'.
 | autobillStatus     | String    | one of retry, failed, or success.
 | paymentStatus      | Select    | description of payment status. One of 'unpaid', 'partial', 'paid', and 'auto-paid'. See the v3_status table on this page for descriptions of each.
 | lastOrderStatus    | String    | describes status of last attempted payment.
@@ -289,7 +281,6 @@ This endpoint allows to update single invoice.
 | address            | String    | First line of address on invoice.
 | depositAmount      | String    | amount required as deposit, null if none.
 | depositPercentage  | String    | percent of the invoice's value required as a deposit.
-| gmail              | Select    | whether to send via ground mail.
 | showAttachments    | Select    | whether attachments on invoice are rendered.
 | visState           | Select    | 0 for active, 1 for deleted.
 | street             | String    | street for address on invoice.
